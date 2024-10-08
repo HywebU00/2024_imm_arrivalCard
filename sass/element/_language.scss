@@ -1,0 +1,132 @@
+// .language {
+//   z-index: 9999;
+//   position: relative;
+//   align-items: center;
+//   padding: 0 0 0 1.5em;
+//   margin-left: auto;
+
+//   @include screen('mobile') {
+//     margin-left: 0;
+//     position: absolute;
+//     right: 60px;
+//     top: 50%;
+//     padding: 0;
+//     transform: translateY(-50%);
+//   }
+//   select {
+//     border: 0;
+//     color: #00ffd2;
+//     font-size: rem(20);
+//     line-height: 1.5;
+//     font-weight: bold;
+//     background: transparent url(../images/basic/icon_select_header.svg) no-repeat right 5px center;
+//     background-size: 16px;
+//     @include screen('mobile') {
+//       font-size: rem(18);
+//       margin: 0 3px;
+//       background-size: 14px;
+//     }
+//   }
+// }
+
+.language {
+  font-size: rem(20);
+  padding: 0 1em;
+  font-weight: bold;
+  z-index: 9999;
+  position: relative;
+  //min-width: 170px;
+  @include screen('tablet') {
+    margin-right: 60px;
+    padding-right: 0;
+  }
+  @include screen('mobile') {
+    min-width: auto;
+  }
+
+  button,
+  & > a {
+    text-align: left;
+    display: block;
+    box-sizing: border-box;
+    color: #00ffd2;
+    background: transparent;
+    border: none;
+    padding: 0.2em 1.5em 0.2em 0.5em;
+    position: relative;
+    transition: 0.3s ease-out;
+    flex: 1 1 auto;
+    margin: 0;
+    //width: 100%;
+    //text-align: right;
+    white-space: nowrap;
+    @include screen('mobile') {
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: -45px 13px 55px 0px rgba(0, 27, 51, 0.1);
+      backdrop-filter: blur(23px);
+    }
+
+    &:after {
+      position: absolute;
+      right: 0.5em;
+      top: calc(50% - 6px);
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-style: solid;
+      border-width: 0 3px 3px 0;
+      border-color: #00ffd2;
+      transform: rotate(45deg);
+    }
+
+    // &:focus-visible {
+    //   box-shadow: none;
+    //   background: #444;
+    // }
+  }
+
+  ul {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    display: none;
+    position: absolute;
+    width: 100%;
+    min-width: 170px;
+    top: 100%;
+    right: 0;
+    //left: -0.5em;
+    overflow: hidden;
+    @include liReset;
+    @include screen('mobile') {
+      width: calc(100% - 20px);
+      position: fixed;
+      left: 10px;
+      top: 65px;
+    }
+
+    li {
+      flex: 1;
+      box-sizing: border-box;
+      margin: 0;
+
+      a {
+        display: block;
+        color: #fff;
+        padding: 0.5em 0.5em 0.5em 2em;
+        transition: 0.3s ease-out;
+        background-position: left 0.8em center;
+        background-repeat: no-repeat;
+        &.selected {
+          background-image: url(../images/icon/icon_check.svg);
+
+          background-size: 16px;
+        }
+        &:hover,
+        &:focus-visible {
+          background-color: $colorPrimary;
+        }
+      }
+    }
+  }
+}

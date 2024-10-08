@@ -1,0 +1,98 @@
+// 此變數為框架之整體變數，控制整體網站之設定，包含 顏色、文字、格線系統
+// 於mixins 資料夾內，各個模組也有其個別使用的變數，請至個別檔案設定，個別使用變數不含在此設定
+
+//---------------------------------------------------顏色---------//
+// 定義顏色 此顏色可自由變換
+$colorPrimary: #004c93; //主色
+$colorSecondary: #11631e; //輔色
+$colorThirdary: #9b6c21; //輔色
+$colorLight: #91cdb9; //點綴
+$colorLink: #004c93; //連結
+$colorImportant: #c60c17; //重要
+$colorDeco: #00eaff;
+
+$colorBlue: #00a4f9;
+$colorBlue02: #133e71;
+$colorBlue03: #0097e5;
+$colorGreen: #1c8457;
+$colorGreen02: #79c500;
+$colorOrange: #d85600;
+$colorRed: #c60c17;
+$colorYellow: #fec003;
+$colorGray: #ccc;
+$colorDark: #333333;
+$colorHr: #666; //hr顏色
+$colorWord: #303030; //一般字的顏色
+$stepColor: #acc5db;
+$btnWordColor: $colorLink; //按鈕字的顏色
+// 連結顏色
+$aColor: #004c93;
+$aHover: mix($aColor, #fff, 90%);
+$aFocus: mix($aColor, #fff, 90%);
+// 表單focus顏色
+$formFocus: #00a4f9; //表單
+$form-btn: #00a4f9; //表單
+// 按鈕設定
+$btn-border: mix($btnWordColor, #000, 10%);
+$btnPadding: 0.5em 1.25em;
+$btnRadius: 4px;
+$btnBg: #e0e0e0;
+
+//--------------------------------------------------------多色設定------//
+// page/_color.scss
+
+//------------------------------------------------------圖片--------//
+//可設定 cover 或是 contain
+$objFit: cover;
+
+//------------------------------------------------------字型--------//
+
+// 字型設定
+$fontFamily: 'Helvetica Neue', Helvetica, Arial, 微軟正黑體, 'PingFang TC', sans-serif;
+
+$fontSize: 1em;
+
+// rem基本尺寸
+$remFontSize: 16;
+
+//------------------------------------------------------格線系統-----//
+
+// 格線系統
+$gridColumns: 12 !default; //格線欄位數
+$gridGutterWidth: 30px !default; //左右padding
+$containerMax: 1400px !default; //container最大寬
+
+//mediaquery
+$screenLg: 1440px !default; //電腦
+$screenMd: 992px !default; //平板
+$screenSm: 768px !default; //手機
+$screenXs: 576px !default; //極小尺寸 - hyui
+$screenXs-flex: 320px !default; //極小尺寸 - flex
+
+//-------------------------------------------------------sitemap------//
+
+$sitemapLength: 4;
+$sitemapWidth: calc(100% / $sitemapLength);
+
+//-------------------------------------------------------表單------//
+
+$formTitleWidth: 150px; // 表單title寬度
+
+//-------------------------------------------------------functionPanel------//
+
+$colorFunction: #666;
+
+//-------------------------------------------------------手機版選單------//
+
+$colorSidebarBg: saturate(darken($colorPrimary, 5), 10);
+// 選色參考：https://sassme.jim-nielsen.com/
+$menuItems: 15;
+
+//-------------------------------------------------------footer------//
+
+$fatFooterBgColor: #f1f1f1; //fatFooter 底色
+
+//--------------------------------------------------------客製化------//
+
+$roundedAngle: 10px; //整站導角
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99); //動態預設

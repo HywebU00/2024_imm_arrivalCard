@@ -1,0 +1,318 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  &.noscroll {
+    position: static;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
+.row {
+  @include makeRow();
+  & > div {
+    box-sizing: border-box;
+  }
+}
+// 最外圍預設為100%
+.wrapper {
+  width: 100%;
+  margin: 0px auto;
+  overflow-x: hidden;
+  @include screen('mobile') {
+    overflow-y: auto;
+    background: #fff;
+  }
+}
+// 整體共用container樣式，請注意首頁切版頁面的整齊
+.container {
+  margin: 0 auto;
+  max-width: $containerMax; //請看_variable.scss
+  position: relative;
+  //@include containerFixed;
+}
+
+.main {
+  position: relative;
+  margin: 0 auto;
+  transition: padding-top 0.3s ease;
+
+  @include screen('mobile') {
+    padding-top: 60px;
+  }
+  // 可先設定一個中央區塊最大寬，限制accessKey對齊
+  h2 {
+    line-height: 1.25em;
+  }
+}
+
+.heading_2,
+h2.title {
+  font-size: rem(36);
+  font-weight: bold;
+  background: linear-gradient(180deg, $colorSecondary 22%, $colorPrimary 77%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin: 0 0 1em 0;
+  letter-spacing: 1px;
+  @include screen('mobile') {
+    margin-bottom: 0.5em;
+  }
+}
+// .header.fixed {
+//   & + .main {
+//     padding-top: 120px;
+//   }
+// }
+////////////////////////////////////////////////////////////
+// 為了與首頁區隔，請在內頁加上innerPage ClassName
+.innerPage {
+  background-color: #fff;
+  padding-bottom: 30px;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: -150px;
+    right: -180px;
+    background: radial-gradient(circle, rgba(210, 238, 157, 0.8) 0%, rgba(217, 246, 163, 0) 70%);
+    height: 700px;
+    width: 700px;
+    border-radius: 50%;
+    @media screen and (max-width: 1200px) {
+      right: -240px;
+    }
+    @include screen('mobile') {
+      height: 500px;
+      width: 500px;
+    }
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -180px;
+    left: -500px;
+    background: radial-gradient(circle, rgb(188, 255, 249, 0.5) 0%, rgba(188, 255, 249, 0) 70%);
+    height: 1000px;
+    width: 1000px;
+    border-radius: 50%;
+    z-index: 0;
+    @media screen and (max-width: 1200px) {
+      left: -600px;
+    }
+    @include screen('mobile') {
+      height: 700px;
+      width: 700px;
+      left: -350px;
+    }
+  }
+  & > .container {
+    padding: 1em 15px;
+    z-index: 1;
+  }
+  h2.title {
+    text-align: center;
+  }
+  h3.subTitle {
+    color: $colorSecondary;
+    text-align: center;
+    font-size: rem(26);
+    margin: 0 0 1.5em;
+    letter-spacing: 1px;
+  }
+
+  // .centerBlock {
+  //   flex: none;
+  //   flex-basis: 100%;
+  //   max-width: 100%;
+  // }
+  // .leftBlock {
+  //   flex: none;
+  //   flex-basis: 260px;
+  //   max-width: 260px;
+  //   margin-right: 40px;
+  //   align-self: flex-start;
+  //   position: sticky;
+  //   top: 50px;
+  //   &.hidden {
+  //     & + .centerBlock {
+  //       flex: none;
+  //       flex-basis: 100%;
+  //       max-width: 100%;
+  //     }
+  //   }
+  //   & + .centerBlock {
+  //     flex: auto;
+  //     flex-basis: calc(100% - 300px);
+  //     max-width: calc(100% - 300px);
+  //   }
+  //   @include screen('tablet') {
+  //     display: none;
+  //     & + .centerBlock {
+  //       flex: none;
+  //       flex-basis: 100%;
+  //       max-width: 100%;
+  //     }
+  //   }
+  // }
+  .contentBox {
+    display: flex;
+    padding: 40px 60px;
+    flex-direction: column;
+    //align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    @include screen('mobile') {
+      padding: 40px 30px;
+    }
+    &.withBg {
+      background-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.1);
+    }
+    & > div {
+      margin-bottom: 2.5em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.instruction {
+  font-family: 'Century Gothic';
+  font-size: rem(18);
+  .instructionTitle {
+    font-size: rem(22);
+    font-weight: bold;
+  }
+  li {
+    margin-bottom: 0.5em;
+  }
+}
+
+.needHelp {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0 -6px 65px rgba(0, 0, 0, 0.2);
+  padding-bottom: 2em;
+  .boxTitle {
+    display: inline-block;
+    font-size: rem(26);
+    font-weight: bold;
+    color: #fff;
+    background-color: $colorThirdary;
+    border-radius: 0 0 27px 27px;
+    padding: 0.5em 3.5em;
+    margin: 0 0 2em;
+    @include screen('mobile') {
+      padding: 0.5em 2em;
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+    @include screen('mobile') {
+      flex-wrap: wrap;
+    }
+  }
+  .questionGrp {
+    margin-bottom: 1.65rem;
+    .subject {
+      font-size: rem(24);
+      font-weight: bold;
+      color: $colorThirdary;
+      margin-bottom: 0.65em;
+      @include screen('mobile') {
+        font-size: rem(22);
+      }
+    }
+    ul {
+      margin: 0.5rem 0;
+      padding-left: 1.2em;
+      li {
+        margin-bottom: 0.5em;
+      }
+      a {
+        font-size: rem(20);
+        color: $colorWord;
+        @include screen('mobile') {
+          font-size: rem(18);
+        }
+        &:hover {
+          color: $aHover;
+        }
+      }
+    }
+  }
+  .howtoVideo {
+    a {
+      display: block;
+      text-align: center;
+      &:hover {
+        .imgContainer::before {
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+    .imgContainer {
+      border-radius: 9px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: 0.2s ease-out;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.5) url(../images/icon/icon_videoplay.svg) no-repeat center left 27px;
+        background-size: 30px;
+        z-index: 1;
+        transition: 0.2s ease-out;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    p {
+      font-size: rem(20);
+      color: $colorWord;
+      @include screen('mobile') {
+        font-size: rem(18);
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,47 @@
+//https://isabelcastillo.com/error-info-messages-css
+*[class^='notice'] {
+  display: block;
+  //width: 100%;
+  font-size: rem(16);
+  margin: 0.2em 0.3em;
+  position: relative;
+  color: #555;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: none;
+  a.close {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 0.8em;
+    right: 1em;
+    display: block;
+    opacity: 0.5;
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+    }
+    img {
+      display: block;
+      width: 12px;
+      height: 12px;
+      margin: 0;
+    }
+  }
+  &.setRight {
+    text-align: right;
+  }
+}
+*[class*='noticeInfo'] {
+  color: $colorBlue02;
+}
+*[class*='noticeSuccess'] {
+  color: $colorSecondary;
+}
+*[class*='noticeWarning'] {
+  color: $colorRed;
+}
+*[class*='noticeError'] {
+  color: #c40000;
+}

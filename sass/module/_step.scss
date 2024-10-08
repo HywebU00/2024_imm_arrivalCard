@@ -1,0 +1,181 @@
+.steps {
+  position: relative;
+  z-index: 20;
+  background-color: #1b62a8;
+  ul {
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    @include liReset();
+    margin: 0 auto;
+    padding: 1.6em 0;
+  }
+  li {
+    position: relative;
+    flex: 1 1 20%;
+    max-width: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: 18px;
+      transform: translate(-50%, 0);
+      background-color: $stepColor;
+    }
+    &:first-of-type {
+      &::before {
+        content: none;
+      }
+    }
+    .stepNum {
+      position: relative;
+      z-index: 1;
+      font-size: rem(18);
+      color: $stepColor;
+      font-weight: bold;
+      width: 36px;
+      height: 36px;
+      margin: 0 auto;
+      border: 3px solid $stepColor;
+      background-color: #1b62a8;
+      border-radius: 50%;
+      line-height: 30px;
+    }
+    .stepTitle {
+      color: $stepColor;
+      font-weight: 500;
+      margin: 1em 0.25em 0;
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.5;
+      font-size: rem(18);
+      @include screen('mobile') {
+        display: none;
+      }
+    }
+    &.current,
+    &.done {
+      &::before {
+        background-color: #fff;
+      }
+      .stepNum {
+        color: #1b62a8;
+        border-color: #fff;
+        background-color: #fff;
+      }
+    }
+    &.current {
+      .stepTitle {
+        color: #fff;
+        @include screen('mobile') {
+          display: block;
+          width: calc(100vw - 0.5em);
+          &::before {
+            content: attr(aria-current) ':';
+            padding-right: 4px;
+          }
+        }
+      }
+    }
+    &:nth-of-type(2) {
+      .stepTitle {
+        @include screen('mobile') {
+          transform: translate(-20%, 0);
+        }
+      }
+    }
+    &:nth-of-type(3) {
+      .stepTitle {
+        @include screen('mobile') {
+          transform: translate(-40%, 0);
+        }
+      }
+    }
+    &:nth-of-type(4) {
+      .stepTitle {
+        @include screen('mobile') {
+          transform: translate(-60%, 0);
+        }
+      }
+    }
+    &:nth-of-type(5) {
+      .stepTitle {
+        @include screen('mobile') {
+          transform: translate(-80%, 0);
+        }
+      }
+    }
+  }
+}
+.submitQA {
+  .steps {
+    background-color: transparent;
+    width: 740px;
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: -220px;
+    @include screen('mobile') {
+      //margin: -100px auto 0;
+      position: relative;
+      top: 0;
+      margin-top: -150px;
+      margin-bottom: 1em;
+    }
+    .boxTitle {
+      font-size: rem(20);
+      color: $colorThirdary;
+      font-weight: bold;
+      margin: 0 0 1em 2em;
+    }
+    ul {
+      max-width: auto;
+      @include screen('xsMobile') {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+    li {
+      @include screen('xsMobile') {
+        flex: 1 1 33.33333%;
+        max-width: 33.33333%;
+      }
+      &::before {
+        content: '';
+        height: 2px;
+        top: 10px;
+        //transform: translate(-50%, -50%);
+        background-color: $colorThirdary;
+      }
+      &:first-of-type {
+        &::before {
+          content: none;
+        }
+      }
+      .stepNum {
+        font-size: 0;
+        width: 20px;
+        height: 20px;
+        border: 5px solid #9b6c21;
+        background-color: #fff;
+      }
+      .stepTitle {
+        color: #9b6c21;
+        font-weight: 700;
+        margin: 1em 0.25em;
+        @include screen('mobile') {
+          font-size: rem(16);
+        }
+      }
+    }
+  }
+}
