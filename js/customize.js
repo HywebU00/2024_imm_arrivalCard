@@ -12,10 +12,10 @@ window.addEventListener('load', () => {
   // tab功能
   tabFunction({
     target: '.tabSet',
-    openFirst: false, // 預設先展開所有內容，鍵盤的自動開合功能無效
+    openFirst: true, // 預設先展開所有內容，鍵盤的自動開合功能無效
     openSwitch: true, // 是否可開合/切換
     autoClose: true, // 自動關閉其他開啟內容
-    modeSwitch: true, // 預設模式自動切換，尺寸以上tab功能，尺寸以下手風琴功能
+    modeSwitch: false, // 預設模式自動切換，尺寸以上tab功能，尺寸以下手風琴功能
     width: 767, // 尺寸以上tab功能，尺寸以下手風琴功能
     index: 0, // 預設開啟第幾個
   });
@@ -112,4 +112,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 頁面載入時自動更新button的文字
   updateButtonText();
+});
+
+// travelerInfo tab功能
+const tabButtons = document.querySelectorAll('.travelerInfo .tabItems .tabBtn');
+const tabContents = document.querySelectorAll('.travelerInfo .tabContentGroup .tabContent');
+
+// 預設讓最後一個按鈕和對應的內容加上 active 類別
+const defaultIndex = tabButtons.length - 1; // 最後一個索引
+tabButtons[defaultIndex].classList.add('active');
+tabContents[defaultIndex].classList.add('active');
+
+const lastIndex = 0; // 第一個索引
+tabButtons[lastIndex].classList.remove('active');
+tabContents[lastIndex].classList.remove('active');
+
+// 為每個按鈕添加點擊事件
+tabButtons.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    // 移除所有按鈕的 active 類別
+    tabButtons.forEach((button) => button.classList.remove('active'));
+    // 為點擊的按鈕添加 active 類別
+    btn.classList.add('active');
+
+    // 移除所有內容區塊的 active 類別
+    tabContents.forEach((content) => content.classList.remove('active'));
+    // 為對應索引的內容區塊添加 active 類別
+    tabContents[index].classList.add('active');
+  });
 });

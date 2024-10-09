@@ -110,7 +110,6 @@
     display: none;
     position: relative;
     padding: 15px;
-    box-shadow: #bbb 0 0 0 1px inset;
 
     &.active {
       display: block;
@@ -167,14 +166,60 @@
     flex: 0 0 300px;
     flex-direction: column;
     .tabBtn {
-      height: 98px;
+      position: relative;
+      padding-left: 60px;
+      margin: 0 0 0.5em;
+      min-height: 98px;
+      height: auto;
       text-align: left;
       pointer-events: fill;
+      border-radius: 9px 0px 0px 9px;
+      border-radius: 9px 0px 0px 9px;
+      background: rgba(203, 203, 203, 1);
+      box-shadow: -78px 0px 70px -70px rgba(0, 0, 0, 0.1) inset;
+      transition: 0.3s ease-in;
+      border: 2px solid rgba(255, 255, 255, 0);
+      border-right: 0;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 60px;
+        height: 100%;
+        background: url(../images/icon/icon_user.svg) center center no-repeat;
+      }
+      &.active {
+        border: 2px solid rgba(255, 255, 255, 0.5);
+
+        background: linear-gradient(121deg, #f0f7f7 -2.5%, #fff 67%);
+        box-shadow: -5px 2px 70px -10px rgba(0, 0, 0, 0.19);
+      }
       span {
         display: block;
+      }
+      .order {
+        font-size: rem(20);
+        color: $colorWord;
+        font-weight: 700;
+      }
+      .name {
+        color: $colorSecondary;
+        font-size: rem(24);
+      }
+      > * {
+        pointer-events: none;
+        cursor: pointer;
       }
     }
   }
   .tabContentGroup {
+    flex: 1 1 auto;
+  }
+  .tabContent {
+    border-radius: 0px 9px 9px 9px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
   }
 }
