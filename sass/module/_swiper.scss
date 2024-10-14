@@ -114,18 +114,19 @@
 
   &::before {
     content: '';
-    width: 20px;
+    width: 30px;
     height: 30px;
     display: block;
-    background: url('../vendor/swiper/ar.svg') center no-repeat;
+    background: url('../images/icon/icon_arrow_left_dark.svg') center no-repeat;
+    background-size: contain;
   }
 
   &.prevSlider {
-    left: 0px;
+    left: -10px;
   }
 
   &.nextSlider {
-    right: 0px;
+    right: -10px;
 
     &::before {
       transform: rotate(180deg);

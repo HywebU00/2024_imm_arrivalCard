@@ -273,7 +273,7 @@ th {
 }
 
 .cp {
-  font-size: 1.0666666em;
+  font-size: 1em;
   line-height: 1.65em;
 }
 @media screen and (max-width: 575px) {
@@ -1824,11 +1824,12 @@ hr {
 }
 .tag ul li a {
   display: block;
-  font-size: 0.938em;
+  font-size: 1rem;
   text-decoration: none;
   color: #303030;
   border: 1px solid #ddd;
   padding: 0.2em 0.75em;
+  border-radius: 4px;
 }
 .tag ul li a:hover, .tag ul li a:focus-visible {
   color: #2a6aa1;
@@ -4324,9 +4325,10 @@ div.function ul li.icon_forward a:before {
   text-align: center;
   line-height: 32px;
   border-radius: 50%;
-  background: #f1f1f1;
+  background: rgba(255, 255, 255, 0.65);
   text-indent: -9999px;
   position: relative;
+  transition: 0.2s ease-in;
 }
 .functionPanel .function ul li a:hover, .functionPanel .function ul li a:focus-visible {
   background: #2a6aa1;
@@ -4400,7 +4402,7 @@ div.function ul li.icon_forward a:before {
 }
 .functionPanel .share .shareButton {
   display: block;
-  background: #f1f1f1;
+  background: rgba(255, 255, 255, 0.65);
   border-radius: 50%;
   width: 32px;
   height: 32px;
@@ -5068,6 +5070,40 @@ h2.title {
   font-weight: 700;
   color: #003260;
   margin-bottom: 0.5em;
+}
+.innerPage .centerBlock {
+  flex: none;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+.innerPage .leftBlock {
+  flex: none;
+  flex-basis: 260px;
+  max-width: 260px;
+  margin-right: 40px;
+  align-self: flex-start;
+  position: sticky;
+  top: 50px;
+}
+.innerPage .leftBlock.hidden + .centerBlock {
+  flex: none;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+.innerPage .leftBlock + .centerBlock {
+  flex: auto;
+  flex-basis: calc(100% - 300px);
+  max-width: calc(100% - 300px);
+}
+@media screen and (max-width: 991px) {
+  .innerPage .leftBlock {
+    display: none;
+  }
+  .innerPage .leftBlock + .centerBlock {
+    flex: none;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 .innerPage .contentBox {
   display: flex;
@@ -6171,16 +6207,17 @@ br {
 }
 .swiperArrow::before {
   content: "";
-  width: 20px;
+  width: 30px;
   height: 30px;
   display: block;
-  background: url("../vendor/swiper/ar.svg") center no-repeat;
+  background: url("../images/icon/icon_arrow_left_dark.svg") center no-repeat;
+  background-size: contain;
 }
 .swiperArrow.prevSlider {
-  left: 0px;
+  left: -10px;
 }
 .swiperArrow.nextSlider {
-  right: 0px;
+  right: -10px;
 }
 .swiperArrow.nextSlider::before {
   transform: rotate(180deg);

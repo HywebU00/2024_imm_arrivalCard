@@ -68,7 +68,8 @@ window.addEventListener('load', () => {
       },
     },
   });
-});
+})();
+
 (function () {
   function adjustMainPadding() {
     var header = document.querySelector('.header');

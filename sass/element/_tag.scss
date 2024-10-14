@@ -22,10 +22,11 @@
       flex: 0 0 auto;
       a {
         display: block;
-        font-size: 0.938em;
+        font-size: rem(16);
         @include aSetting($colorWord);
         border: 1px solid #ddd;
         padding: 0.2em 0.75em;
+        border-radius: 4px;
       }
     }
   }
