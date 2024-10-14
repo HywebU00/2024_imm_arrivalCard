@@ -5087,11 +5087,6 @@ h2.title {
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.1);
 }
-@media screen and (max-width: 767px) {
-  .innerPage .contentBox.withBg {
-    padding: 40px 30px;
-  }
-}
 .innerPage .contentBox.center {
   align-items: center;
 }
@@ -5944,6 +5939,7 @@ h2.title {
 @media screen and (max-width: 767px) {
   .submitQA .steps li .stepTitle {
     font-size: 1rem;
+    display: block;
   }
 }
 
