@@ -3789,7 +3789,7 @@ table.tableSprite tr:nth-child(even) {
 }
 .submenu li a {
   border: 1px solid #ddd;
-  padding: 1em 1em 1em 2.5em;
+  padding: 1em 1em 1em 3em;
   display: block;
   vertical-align: top;
   position: relative;
@@ -3807,7 +3807,7 @@ table.tableSprite tr:nth-child(even) {
 }
 .submenu li a .num {
   position: absolute;
-  width: 1em;
+  width: 2em;
   top: 1em;
   left: 0.5em;
   text-align: right;
@@ -4723,12 +4723,12 @@ div.function ul li.icon_forward a:before {
 .sitemap p kbd kbd {
   border: none;
 }
-.sitemap .accessKeyDefine {
+.sitemap .accesskeyDefine {
   padding: 1em 2em;
   background: #eee;
   border-radius: 6px;
 }
-.sitemap .accessKeyDefine li {
+.sitemap .accesskeyDefine li {
   margin-bottom: 0.2em;
 }
 
