@@ -42,6 +42,34 @@ window.addEventListener('load', () => {
 
 // 自行加入的JS請寫在這裡
 (function () {
+  //cp輪播
+  const cpSwiper = new Swiper('.cpSlider .swiper', {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    loop: false,
+    // 切換點
+    pagination: {
+      el: '.cpSlider .swiperDots',
+      bulletElement: 'button',
+      clickable: true,
+    },
+    // 切換箭頭
+    navigation: {
+      nextEl: '.cpSlider .nextSlider', //自行設定樣式
+      prevEl: '.cpSlider .prevSlider', //自行設定樣式
+      disabledClass: 'swiperArrow-disabled', //不可點選樣式
+    },
+    breakpoints: {
+      100: {
+        slidesPerView: 2,
+      },
+      767: {
+        slidesPerView: 4,
+      },
+    },
+  });
+});
+(function () {
   function adjustMainPadding() {
     var header = document.querySelector('.header');
     var main = document.querySelector('main');

@@ -3219,27 +3219,49 @@ input[type=file] {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
-.captcha input[type=text] {
-  width: 300px;
+.captcha .captchaImg {
+  display: flex;
+  align-items: center;
 }
-
-img.captcha {
-  display: inline-block;
-  vertical-align: middle;
-  max-height: 2.5em;
-  margin: 0.3em 0.5em 0.3em 0.3em;
+.captcha .captchaImg img {
+  max-width: 200px;
 }
-img.captcha + input {
-  display: inline-block;
-  width: auto;
-  vertical-align: middle;
+.captcha .captchaImg .btn {
+  margin: 3px;
+  padding: 0.25em;
+  min-width: 50px;
+  width: 50px;
+  height: 48px;
+  box-shadow: none;
 }
-img.captcha ~ img {
-  display: inline-block;
-  vertical-align: middle;
-  max-height: 2.4em;
-  margin-bottom: 0.5em;
+.captcha .verify {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 400px;
+  max-width: 100%;
+}
+.captcha .verify .formContent {
+  display: flex;
+  align-items: center;
+  flex-basis: 400px;
+  max-width: 100%;
+}
+.captcha .verify .formTitle {
+  display: block;
+  width: 100%;
+  color: #303030;
+  font-size: 1rem;
+}
+.captcha .verify input[type=text] {
+  flex: 1 1 auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.captcha .verify .btn {
+  height: 45px;
 }
 
 abbr[title] {

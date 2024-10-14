@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Taiwan Arrival Card</title>
-
+    <link rel="stylesheet" href="css/animate.css" />
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- favicon -->
@@ -83,7 +83,7 @@
         </section>
         <section class="submitQA">
           <div class="container">
-            <div class="steps">
+            <div class="steps wow fadeInLeft" data-wow-delay="0.3s" data-wow-duration="1.2s">
               <div class="boxTitle">HOW DO I SUBMIT?</div>
               <ul>
                 <li>
@@ -111,28 +111,28 @@
             <div class="listGrp">
               <h2 class="heading_2">WHO SHOULD SUBMIT?</h2>
               <ul>
-                <li>Foreigners without an ROC (Taiwan) Resident Certificate / a Diplomatic ID Card / a Resident Visa.</li>
-                <li>Mainland Chinese with a Multiple Entry & Exit Permit for the purpose of sightseeing.</li>
-                <li>Hong Kong and Macau Residents with a Single/Multiple Entry & Exit Permit, excluding those who enter Taiwan with an Online Entry Permit / Landing Entry Permit / ROC (Taiwan) Resident Certificate.</li>
-                <li>Nationals without Household Registration without an ROC (Taiwan) Resident Certificate.</li>
+                <li class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">Foreigners without an ROC (Taiwan) Resident Certificate / a Diplomatic ID Card / a Resident Visa.</li>
+                <li class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">Mainland Chinese with a Multiple Entry & Exit Permit for the purpose of sightseeing.</li>
+                <li class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">Hong Kong and Macau Residents with a Single/Multiple Entry & Exit Permit, excluding those who enter Taiwan with an Online Entry Permit / Landing Entry Permit / ROC (Taiwan) Resident Certificate.</li>
+                <li class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">Nationals without Household Registration without an ROC (Taiwan) Resident Certificate.</li>
               </ul>
             </div>
             <div class="cardGrp">
               <h2 class="heading_2">WHAT DO I NEED TO SUBMIT?</h2>
               <ul>
-                <li>
+                <li class="wow flipInY" data-wow-delay="0.5s" data-wow-duration="1s">
                   <img src="images/icon/icon_passport_color.svg" alt="" />
                   <div class="itemTxt">Valid passport(s).</div>
                 </li>
-                <li>
+                <li class="wow flipInY" data-wow-delay="0.8s" data-wow-duration="1s">
                   <img src="images/icon/icon_email_color.svg" alt="" />
                   <div class="itemTxt">Traveler's valid email address.</div>
                 </li>
-                <li>
+                <li class="wow flipInY" data-wow-delay="1.1s" data-wow-duration="1s">
                   <img src="images/icon/icon_occupation_color.svg" alt="" />
                   <div class="itemTxt">Traveler's occupation and phone number.</div>
                 </li>
-                <li>
+                <li class="wow flipInY" data-wow-delay="1.4s" data-wow-duration="1s">
                   <img src="images/icon/icon_accommodation_color.svg" alt="" />
                   <div class="itemTxt">Travel and accommodation information</div>
                 </li>
@@ -207,7 +207,17 @@
       <!-- footer End -->
     </div>
     <a href="javascript:;" class="scrollToTop" role="button">回頁首</a>
-
+    <!-- wow -->
+    <script src="vendor/wow/wow.js"></script>
+    <script>
+      new WOW({
+        boxClass: 'wow', // default
+        animateClass: 'animated', // default
+        offset: 50, // default
+        mobile: true, // default
+        live: true, // default
+      }).init();
+    </script>
     <!-- lazyload -->
     <script src="vendor/lazyload/lazyload.js"></script>
     <!-- fancybox -->
