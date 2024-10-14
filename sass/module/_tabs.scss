@@ -1,5 +1,5 @@
 .tabSet {
-  margin: 30px auto;
+  margin: 10px auto;
   // .tabItems {
   //   display: flex;
   //   flex-flow: row nowrap;
@@ -83,15 +83,15 @@
 
   .modeBBtn,
   .tabBtn {
-    flex: 1 1 auto;
+    flex: 1 1 33.33333%;
     font-size: 1em;
-    height: 2.8em;
+    height: 2.75em;
     text-align: center;
     border: none;
-    margin: 1px;
     border-radius: 0;
     box-shadow: none;
-    background: #ddd;
+    background: #e5e5e5;
+    color: #666;
     cursor: pointer;
 
     &:focus-visible {
@@ -101,7 +101,7 @@
 
     &.active {
       cursor: default;
-      background: #00a4f9;
+      background: $aColor;
       color: #fff;
     }
   }
@@ -109,7 +109,10 @@
   .tabContent {
     display: none;
     position: relative;
-    padding: 15px;
+    padding: 0;
+    @include screen('mobile') {
+      padding: 2px 0;
+    }
 
     &.active {
       display: block;
@@ -125,9 +128,22 @@
     }
 
     .content {
+      padding: 40px 20px;
+      font-family: 'century gothic';
+      background-color: #f2f2f2;
+
+      @include screen('mobile') {
+        padding: 20px;
+      }
       ul {
         margin: 0;
       }
+    }
+    .formTitle {
+      color: $colorPrimary;
+    }
+    input {
+      background-color: #f2f2f2;
     }
   }
 
@@ -160,41 +176,153 @@
   }
 }
 
+.accommodation {
+  .tabContent {
+    .content {
+      display: flex;
+      justify-content: center;
+    }
+    .formGrp {
+      justify-content: center;
+    }
+  }
+}
+
 .travelerInfo {
+  position: relative;
   display: flex;
-  .tabItems {
+
+  @include screen('tablet') {
+    flex-wrap: wrap;
+  }
+  & > .tabItems2 {
     flex: 0 0 300px;
     flex-direction: column;
-    .tabBtn {
+    position: relative;
+    @include screen('tablet') {
+      overflow: hidden;
+      position: absolute;
+      z-index: 50;
+      flex-basis: 100%;
+      width: 100%;
+      margin-bottom: 1em;
+      //transition: 0.2s $cubic;
+      filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.15));
+      &:has(> .toggleBtn.open) {
+        filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.3));
+      }
+      &.fixed {
+        position: fixed;
+        left: 15px;
+        top: 130px;
+        flex-basis: calc(100% - 30px);
+        width: calc(100% - 30px);
+        filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.3));
+      }
+    }
+    @include screen('mobile') {
+      &.fixed {
+        top: 70px;
+      }
+    }
+    .toggleBtn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      display: none;
+      width: 70px;
+      border-radius: 0 9px 9px 0;
+      background: #fff url(../images/icon/icon_arrow_down_dark.svg) center no-repeat;
+      background-size: 20px;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: 0.2s ease-in;
+      @include screen('tablet') {
+        display: block;
+      }
+      &.open {
+        border-radius: 0 9px 0 0;
+        & ~ .tabBtn {
+          display: block;
+        }
+      }
+    }
+    .tabBtn2 {
+      width: 100%;
       position: relative;
-      padding-left: 60px;
+      z-index: 1;
+      padding-left: 70px;
       margin: 0 0 0.5em;
       min-height: 98px;
       height: auto;
       text-align: left;
       pointer-events: fill;
       border-radius: 9px 0px 0px 9px;
-      border-radius: 9px 0px 0px 9px;
-      background: rgba(203, 203, 203, 1);
-      box-shadow: -78px 0px 70px -70px rgba(0, 0, 0, 0.1) inset;
-      transition: 0.3s ease-in;
-      border: 2px solid rgba(255, 255, 255, 0);
-      border-right: 0;
-      &::before {
+      background-color: #ccc;
+      box-shadow: -78px 0px 70px -70px rgba(0, 0, 0, 0.15) inset;
+      transition: 0.2s ease-in;
+      border-width: 2px 0 2px 2px;
+      border-style: solid;
+      border-color: transparent;
+
+      @include screen('tablet') {
+        border-radius: 0px;
+        margin-bottom: 0;
+        box-shadow: none;
+        background-color: #ddd;
+        border-bottom: 1px solid #eee;
+        min-height: auto;
+        padding-right: 80px;
+        display: none;
+        &:has(~ .toggleBtn.open) {
+          border-radius: 0px;
+        }
+        &:first-of-type {
+          border-radius: 9px;
+          &:has(~ .toggleBtn.open) {
+            border-radius: 9px 9px 0px 0px;
+          }
+        }
+        &:last-of-type {
+          border-radius: 0px 0px 9px 9px;
+          &:has(~ .toggleBtn.open) {
+            border-radius: 0px 0px 9px 9px;
+          }
+        }
+      }
+      &:hover {
+        background-color: rgba(190, 190, 190, 1);
+        &::before {
+          opacity: 0.85;
+        }
+      }
+      &::after {
         content: '';
         display: block;
         position: absolute;
         left: 0;
         top: 0;
-        width: 60px;
+        width: 70px;
         height: 100%;
-        background: url(../images/icon/icon_user.svg) center center no-repeat;
+        background: url(../images/icon/icon_user.svg) top 0.8em center no-repeat;
+        background-size: 28px;
+        opacity: 0.75;
       }
       &.active {
-        border: 2px solid rgba(255, 255, 255, 0.5);
-
-        background: linear-gradient(121deg, #f0f7f7 -2.5%, #fff 67%);
-        box-shadow: -5px 2px 70px -10px rgba(0, 0, 0, 0.19);
+        border-color: rgba(255, 255, 255, 0.5);
+        background: linear-gradient(130deg, #f2f7f7 -2.5%, #fff 67%);
+        box-shadow: -15px 20px 30px -15px rgba(0, 0, 0, 0.1), -15px -20px 30px -15px rgba(0, 0, 0, 0.1);
+        cursor: default;
+        &::after {
+          opacity: 1;
+        }
+        @include screen('tablet') {
+          border-radius: 9px;
+          background: linear-gradient(160deg, #f0f7f7 6%, #fff 100%);
+          box-shadow: none;
+          display: block;
+        }
       }
       span {
         display: block;
@@ -203,10 +331,16 @@
         font-size: rem(20);
         color: $colorWord;
         font-weight: 700;
+        @include screen('tablet') {
+          font-size: rem(16);
+        }
       }
       .name {
         color: $colorSecondary;
         font-size: rem(24);
+        @include screen('tablet') {
+          font-size: rem(20);
+        }
       }
       > * {
         pointer-events: none;
@@ -214,12 +348,25 @@
       }
     }
   }
-  .tabContentGroup {
+  .tabContentGroup2 {
     flex: 1 1 auto;
   }
-  .tabContent {
+  .tabContent2 {
+    display: none;
     border-radius: 0px 9px 9px 9px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.75);
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    padding: 40px 50px;
+    @include screen('tablet') {
+      border-radius: 9px;
+      padding: 15px 20px;
+    }
+    &.active {
+      display: block;
+    }
+    h2.title {
+      text-align: left;
+      margin: 0;
+    }
   }
 }

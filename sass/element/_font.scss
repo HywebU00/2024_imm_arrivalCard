@@ -12,10 +12,11 @@ body {
   font-size: rem(20);
   font-weight: normal;
   color: $colorWord;
-  line-height: 1.6em;
+  line-height: 1.6;
   font-family: $fontFamily;
   -webkit-text-size-adjust: none;
   overflow-wrap: break-word;
+  word-break: break-word;
   // --變更為全站
   &.smallSize {
     font-size: 0.938em;

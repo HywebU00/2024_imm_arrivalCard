@@ -26,15 +26,16 @@ $colorWord: #303030; //一般字的顏色
 $stepColor: #acc5db;
 $btnWordColor: $colorLink; //按鈕字的顏色
 // 連結顏色
-$aColor: #004c93;
+$aColor: #125997;
 $aHover: mix($aColor, #fff, 90%);
-$aFocus: mix($aColor, #fff, 90%);
+$aFocus: mix($aColor, #000, 90%);
 // 表單focus顏色
-$formFocus: #00a4f9; //表單
-$form-btn: #00a4f9; //表單
+$formFocus: #125997; //表單
+$form-btn: #125997; //表單
+$inputFocus: #f1fdff; //表單
 // 按鈕設定
 $btn-border: mix($btnWordColor, #000, 10%);
-$btnPadding: 0.5em 1.25em;
+//$btnPadding: 0.5em 1.25em;
 $btnRadius: 4px;
 $btnBg: #e0e0e0;
 
@@ -61,7 +62,7 @@ $remFontSize: 16;
 $gridColumns: 12 !default; //格線欄位數
 $gridGutterWidth: 30px !default; //左右padding
 $containerMax: 1400px !default; //container最大寬
-
+$containerMaxSm: 1200px !default;
 //mediaquery
 $screenLg: 1440px !default; //電腦
 $screenMd: 992px !default; //平板

@@ -1,11 +1,12 @@
 //https://isabelcastillo.com/error-info-messages-css
 *[class^='notice'] {
   display: block;
-  //width: 100%;
+  width: 100%;
   font-size: rem(16);
   margin: 0.2em 0.3em;
   position: relative;
   color: #555;
+  text-align: left;
   position: relative;
   box-sizing: border-box;
   border-radius: 4px;

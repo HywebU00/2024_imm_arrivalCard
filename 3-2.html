@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" class="no-js">
+<html lang="en" class="no-js">
   <head>
     <meta name="robots" content="noindex" />
     <!-- 使用 noindex 禁止 Google 搜尋建立索引，套版時請工程師刪掉這行 -->
@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Taiwan Arrival Card</title>
-
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- favicon -->
@@ -92,25 +91,584 @@
           </ul>
         </div>
         <div class="container">
+          <div class="btnGrp right">
+            <button type="button" class="btn btnSecondary">IMPORT</button>
+            <a href="Template.xlsx" download class="btn"><i class="i_download_dark"></i>Template.xlsx</a>
+          </div>
           <div class="travelerInfo">
-            <!-- 頁籤的上一層父物件要加 role="tablist" -->
-            <div class="tabItems">
-              <button type="button" class="tabBtn">
+            <div class="tabItems2">
+              <!-- <a href="#" role="button" class="toggleBtn" tabindex="0"></a> -->
+              <button type="button" class="tabBtn2">
                 <span class="order">Lead Traveler </span>
                 <span class="name">AMANDA</span>
               </button>
-              <button type="button" class="tabBtn">
+              <button type="button" class="tabBtn2">
                 <span class="order">Traveler 02</span>
                 <span class="name">JOHNATHAN</span>
               </button>
+              <button type="button" class="tabBtn2">
+                <span class="order">Traveler 03</span>
+                <span class="name">Sam</span>
+              </button>
             </div>
-            <div class="tabContentGroup">
-              <div class="tabContent">
-                <div class="content"></div>
-              </div>
-              <div class="tabContent">
-                <div class="content"></div>
-              </div>
+            <div class="tabContentGroup2">
+              <form action="" lang="en">
+                <!-- 頁籤內容 1 -->
+                <div class="tabContent2">
+                  <h2 class="title">Traveler Information</h2>
+                  <div class="notice">Mandatory fields are indicated by a red asterisk <abbr class="necessary" title="">*</abbr></div>
+                  <div class="row alignCenter">
+                    <div class="col-6 uploadPassport">
+                      <button class="btn btnPrimary" type="button"><i class="i_camera"></i>UPLOAD YOUR PASSPORT</button>
+                    </div>
+                    <div class="col-6 samplePassport">
+                      <div class="blockTitle">SAMPLE PASSPORT</div>
+                      <a href="images/sample_passport.jpg" data-fancybox="gallery" data-caption="sample passport" data-alt="sample passport">
+                        <div class="imgContainer">
+                          <img src="images/sample_passport.jpg" alt="sample passport" />
+                        </div>
+                      </a>
+                      <p>This sample passport displays the information you will need from applicant's passport. Information must be entered exactly as it appears in passport. Enlarge image to see more information.</p>
+                    </div>
+                  </div>
+                  <div class="flexForm">
+                    <div class="formGrp" role="group">
+                      <div class="col-12">
+                        <label aria-required="true" class="formTitle">Expect Arrival Date<abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr></label>
+                        <div class="radioGrp">
+                          <label for="radioBtn01" class="btnStyle"> <input id="radioBtn01" type="radio" name="sampleRadio5" value="" title="27/08/2024" /><span>27/08/2024</span></label>
+                          <label for="radioBtn02" class="btnStyle"> <input id="radioBtn02" type="radio" name="sampleRadio5" value="" title="28/08/2024" /><span>28/08/2024</span></label>
+                          <label for="radioBtn03" class="btnStyle"> <input type="radio" id="radioBtn03" name="sampleRadio5" value="" title="29/08/2024" /><span>29/08/2024</span></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-12">
+                        <label aria-required="true" for="username" class="formTitle">English Name (In Passport) <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" id="username" placeholder="" title="" />
+                        <div class="noticeWarning">Please fill in the field above</div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-12">
+                        <label for="username" class="formTitle">Chinese Name</label>
+                        <input type="text" id="username" placeholder="" title="" />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="username" class="formTitle">Passport Number <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" id="username" placeholder="" title="" />
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Date of Passport Expiry <abbr class="necessary" title="">*</abbr></label>
+                        <input type="date" id="" title="" lang="en" />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6" role="group">
+                        <div aria-required="true" class="formTitle">Sex<abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr></div>
+                        <div class="radioGrp">
+                          <label for="radioMale" class="btnStyle"> <input id="radioMale" type="radio" name="sampleRadio5" value="" title="male" /><span>MALE</span></label>
+                          <label for="radioFemale" class="btnStyle"> <input id="radioFemale" type="radio" name="sampleRadio5" value="" title="female" /><span>FAMALE</span></label>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Date of Birth <abbr class="necessary" title="">*</abbr></label>
+                        <input type="date" id="" title="" lang="en" />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6 dropdown">
+                        <label aria-required="true" for="" class="formTitle">Nationality <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" class="dropdownInput" placeholder="SEARCH" />
+                        <!-- 自訂的下拉選單 -->
+                        <div class="dropdownContent">
+                          <div class="dropdownItem">AMERICA</div>
+                          <div class="dropdownItem">AUSTRALIA</div>
+                          <div class="dropdownItem">BRAZIL</div>
+                          <div class="dropdownItem">CHINA</div>
+                          <div class="dropdownItem">INDIA</div>
+                          <div class="dropdownItem">INDONESIA</div>
+                          <div class="dropdownItem">ITALY</div>
+                          <div class="dropdownItem">MEXICO</div>
+                          <div class="dropdownItem">NEW ZEALAND</div>
+                          <div class="dropdownItem">POLAND</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6 dropdown">
+                        <label aria-required="true" for="" class="formTitle">Country / Place of Birth <abbr class="necessary" title="">*</abbr></label>
+                        <!-- 自訂的下拉選單 -->
+                        <input type="text" class="dropdownInput" placeholder="SEARCH" />
+                        <div class="dropdownContent">
+                          <div class="dropdownItem">AMERICA</div>
+                          <div class="dropdownItem">AUSTRALIA</div>
+                          <div class="dropdownItem">BRAZIL</div>
+                          <div class="dropdownItem">CHINA</div>
+                          <div class="dropdownItem">INDIA</div>
+                          <div class="dropdownItem">INDONESIA</div>
+                          <div class="dropdownItem">ITALY</div>
+                          <div class="dropdownItem">MEXICO</div>
+                          <div class="dropdownItem">NEW ZEALAND</div>
+                          <div class="dropdownItem">POLAND</div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">City / State or Pronvince </label>
+                        <input type="text" id="" title="City / State or Pronvince " />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-12 dropdown">
+                        <label aria-required="true" for="" class="formTitle">Place of Residence <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" class="dropdownInput" placeholder="SEARCH" />
+                        <!-- 自訂的下拉選單 -->
+                        <div class="dropdownContent">
+                          <div class="dropdownItem">AMERICA</div>
+                          <div class="dropdownItem">AUSTRALIA</div>
+                          <div class="dropdownItem">BRAZIL</div>
+                          <div class="dropdownItem">CHINA</div>
+                          <div class="dropdownItem">INDIA</div>
+                          <div class="dropdownItem">INDONESIA</div>
+                          <div class="dropdownItem">ITALY</div>
+                          <div class="dropdownItem">MEXICO</div>
+                          <div class="dropdownItem">NEW ZEALAND</div>
+                          <div class="dropdownItem">POLAND</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Visa Type <abbr class="necessary" title="">*</abbr></label>
+                        <select name="" id="">
+                          <option readonly>SELECT OPTION</option>
+                          <option value="">AAA</option>
+                          <option value="">BBB</option>
+                          <option value="">CCC</option>
+                          <option value="">DDD</option>
+                          <option value="">...</option>
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Entry Permit / Visa Number </label>
+                        <input type="text" id="" title="City / State or Pronvince " />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Country / Region Code <abbr class="necessary" title="">*</abbr></label>
+                        <div class="inputWrap">
+                          <span>+</span>
+                          <input type="text" id="" value="" title="" maxlength="3" />
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Mobile Number<abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" id="" title="" />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Occupation<abbr class="necessary" title="">*</abbr></label>
+                        <select name="" id="">
+                          <option readonly>SELECT OPTION</option>
+                          <option value="">AAA</option>
+                          <option value="">BBB</option>
+                          <option value="">CCC</option>
+                          <option value="">DDD</option>
+                          <option value="">...</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="btnGrp between m_reverse">
+                      <button type="button" class="btn btnCancel">CANCEL</button>
+                      <div class="btnGrp">
+                        <button type="button" class="btn btnSecondary"><i class="i_add_people"></i>ADD TRAVELERS</button>
+                        <button type="button" class="btn btnPrimary">NEXT</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 頁籤內容 2 -->
+                <div class="tabContent2">
+                  <h2 class="title">Traveler Information</h2>
+                  <div class="notice">Mandatory fields are indicated by a red asterisk <abbr class="necessary" title="">*</abbr></div>
+                  <div class="row alignCenter">
+                    <div class="col-6 uploadPassport">
+                      <button class="btn btnPrimary" type="button"><i class="i_camera"></i>UPLOAD YOUR PASSPORT</button>
+                    </div>
+                    <div class="col-6 samplePassport">
+                      <div class="blockTitle">SAMPLE PASSPORT</div>
+                      <a href="images/sample_passport.jpg" data-fancybox="gallery" data-caption="sample passport" data-alt="sample passport">
+                        <div class="imgContainer">
+                          <img src="images/sample_passport.jpg" alt="sample passport" />
+                        </div>
+                      </a>
+                      <p>This sample passport displays the information you will need from applicant's passport. Information must be entered exactly as it appears in passport. Enlarge image to see more information.</p>
+                    </div>
+                  </div>
+                  <div class="flexForm">
+                    <div class="formGrp" role="group">
+                      <div class="col-12">
+                        <div aria-required="true" class="formTitle">Expect Arrival Date<abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr></div>
+                        <div class="radioGrp">
+                          <label for="radioBtn01" class="btnStyle"> <input id="radioBtn01" type="radio" name="sampleRadio5" value="" title="27/08/2024" /><span>27/08/2024</span></label>
+                          <label for="radioBtn02" class="btnStyle"> <input id="radioBtn02" type="radio" name="sampleRadio5" value="" title="28/08/2024" /><span>28/08/2024</span></label>
+                          <label for="radioBtn03" class="btnStyle"> <input type="radio" id="radioBtn03" name="sampleRadio5" value="" title="29/08/2024" /><span>29/08/2024</span></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-12">
+                        <label aria-required="true" for="username" class="formTitle">English Name（In Passport) <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" id="username" placeholder="" title="" />
+                        <div class="noticeWarning">Please fill in the field above</div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-12">
+                        <label for="username" class="formTitle">Chinese Name</label>
+                        <input type="text" id="username" placeholder="" title="" />
+                      </div>
+                    </div>
+
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="username" class="formTitle">Passport Number <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" id="username" placeholder="" title="" />
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Date of Passport Expiry <abbr class="necessary" title="">*</abbr></label>
+                        <input type="date" id="" title="" lang="en" />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6" role="group">
+                        <div aria-required="true" class="formTitle">Sex<abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr></div>
+                        <div class="radioGrp">
+                          <label for="radioMale" class="btnStyle"> <input id="radioMale" type="radio" name="sampleRadio5" value="" title="male" /><span>MALE</span></label>
+                          <label for="radioFemale" class="btnStyle"> <input id="radioFemale" type="radio" name="sampleRadio5" value="" title="female" /><span>FAMALE</span></label>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Date of Birth <abbr class="necessary" title="">*</abbr></label>
+                        <input type="date" id="" title="" lang="en" />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6 dropdown">
+                        <label aria-required="true" for="" class="formTitle">Nationality <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" class="dropdownInput" placeholder="SEARCH" />
+                        <!-- 自訂的下拉選單 -->
+                        <div class="dropdownContent">
+                          <div class="dropdownItem">AMERICA</div>
+                          <div class="dropdownItem">AUSTRALIA</div>
+                          <div class="dropdownItem">BRAZIL</div>
+                          <div class="dropdownItem">CHINA</div>
+                          <div class="dropdownItem">INDIA</div>
+                          <div class="dropdownItem">INDONESIA</div>
+                          <div class="dropdownItem">ITALY</div>
+                          <div class="dropdownItem">MEXICO</div>
+                          <div class="dropdownItem">NEW ZEALAND</div>
+                          <div class="dropdownItem">POLAND</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6 dropdown">
+                        <label aria-required="true" for="" class="formTitle">Country / Place of Birth <abbr class="necessary" title="">*</abbr></label>
+                        <!-- 自訂的下拉選單 -->
+                        <input type="text" class="dropdownInput" placeholder="SEARCH" />
+                        <div class="dropdownContent">
+                          <div class="dropdownItem">AMERICA</div>
+                          <div class="dropdownItem">AUSTRALIA</div>
+                          <div class="dropdownItem">BRAZIL</div>
+                          <div class="dropdownItem">CHINA</div>
+                          <div class="dropdownItem">INDIA</div>
+                          <div class="dropdownItem">INDONESIA</div>
+                          <div class="dropdownItem">ITALY</div>
+                          <div class="dropdownItem">MEXICO</div>
+                          <div class="dropdownItem">NEW ZEALAND</div>
+                          <div class="dropdownItem">POLAND</div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">City / State or Pronvince </label>
+                        <input type="text" id="" title="City / State or Pronvince " />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-12 dropdown">
+                        <label aria-required="true" for="" class="formTitle">Place of Residence <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" class="dropdownInput" placeholder="SEARCH" />
+                        <!-- 自訂的下拉選單 -->
+                        <div class="dropdownContent">
+                          <div class="dropdownItem">AMERICA</div>
+                          <div class="dropdownItem">AUSTRALIA</div>
+                          <div class="dropdownItem">BRAZIL</div>
+                          <div class="dropdownItem">CHINA</div>
+                          <div class="dropdownItem">INDIA</div>
+                          <div class="dropdownItem">INDONESIA</div>
+                          <div class="dropdownItem">ITALY</div>
+                          <div class="dropdownItem">MEXICO</div>
+                          <div class="dropdownItem">NEW ZEALAND</div>
+                          <div class="dropdownItem">POLAND</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Visa Type <abbr class="necessary" title="">*</abbr></label>
+                        <select name="" id="">
+                          <option readonly>SELECT OPTION</option>
+                          <option value="">AAA</option>
+                          <option value="">BBB</option>
+                          <option value="">CCC</option>
+                          <option value="">DDD</option>
+                          <option value="">...</option>
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Entry Permit / Visa Number </label>
+                        <input type="text" id="" title="City / State or Pronvince " />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Country / Region Code <abbr class="necessary" title="">*</abbr></label>
+                        <div class="inputWrap">
+                          <span>+</span>
+                          <input type="text" id="" value="" title="" maxlength="3" />
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Mobile Number<abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" id="" title="" />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Occupation<abbr class="necessary" title="">*</abbr></label>
+                        <select name="" id="">
+                          <option readonly>SELECT OPTION</option>
+                          <option value="">AAA</option>
+                          <option value="">BBB</option>
+                          <option value="">CCC</option>
+                          <option value="">DDD</option>
+                          <option value="">...</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Email Address<abbr class="necessary" title="">*</abbr></label>
+                        <div class="checkGrp">
+                          <label> <input type="checkbox" name="" value="" title="Same as Lead Traveller" />Same as Lead Traveller</label>
+                        </div>
+                        <input type="email" id="" title="" />
+                      </div>
+                    </div>
+                    <div class="btnGrp between m_reverse">
+                      <button type="button" class="btn btnCancel">CANCEL</button>
+                      <div class="btnGrp">
+                        <button type="button" class="btn btnSecondary"><i class="i_add_people"></i>ADD TRAVELERS</button>
+                        <button type="button" class="btn btnPrimary">NEXT</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 頁籤內容 3 -->
+                <div class="tabContent2">
+                  <h2 class="title">Traveler Information</h2>
+                  <div class="notice">Mandatory fields are indicated by a red asterisk <abbr class="necessary" title="">*</abbr></div>
+                  <div class="row alignCenter">
+                    <div class="col-6 uploadPassport">
+                      <button class="btn btnPrimary" type="button"><i class="i_camera"></i>UPLOAD YOUR PASSPORT</button>
+                    </div>
+                    <div class="col-6 samplePassport">
+                      <div class="blockTitle">SAMPLE PASSPORT</div>
+                      <a href="images/sample_passport.jpg" data-fancybox="gallery" data-caption="sample passport" data-alt="sample passport">
+                        <div class="imgContainer">
+                          <img src="images/sample_passport.jpg" alt="sample passport" />
+                        </div>
+                      </a>
+                      <p>This sample passport displays the information you will need from applicant's passport. Information must be entered exactly as it appears in passport. Enlarge image to see more information.</p>
+                    </div>
+                  </div>
+                  <div class="flexForm">
+                    <div class="formGrp" role="group">
+                      <div class="col-12">
+                        <div aria-required="true" class="formTitle">Expect Arrival Date<abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr></div>
+                        <div class="radioGrp">
+                          <label for="radioBtn01" class="btnStyle"> <input id="radioBtn01" type="radio" name="sampleRadio5" value="" title="27/08/2024" /><span>27/08/2024</span></label>
+                          <label for="radioBtn02" class="btnStyle"> <input id="radioBtn02" type="radio" name="sampleRadio5" value="" title="28/08/2024" /><span>28/08/2024</span></label>
+                          <label for="radioBtn03" class="btnStyle"> <input type="radio" id="radioBtn03" name="sampleRadio5" value="" title="29/08/2024" /><span>29/08/2024</span></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-12">
+                        <label aria-required="true" for="username" class="formTitle">English Name（In Passport) <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" id="username" placeholder="" title="" />
+                        <div class="noticeWarning">Please fill in the field above</div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-12">
+                        <label for="username" class="formTitle">Chinese Name</label>
+                        <input type="text" id="username" placeholder="" title="" />
+                      </div>
+                    </div>
+
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="username" class="formTitle">Passport Number <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" id="username" placeholder="" title="" />
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Date of Passport Expiry <abbr class="necessary" title="">*</abbr></label>
+                        <input type="date" id="" title="" lang="en" />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6" role="group">
+                        <div aria-required="true" class="formTitle">Sex<abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr></div>
+                        <div class="radioGrp">
+                          <label for="radioMale" class="btnStyle"> <input id="radioMale" type="radio" name="sampleRadio5" value="" title="male" /><span>MALE</span></label>
+                          <label for="radioFemale" class="btnStyle"> <input id="radioFemale" type="radio" name="sampleRadio5" value="" title="female" /><span>FAMALE</span></label>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Date of Birth <abbr class="necessary" title="">*</abbr></label>
+                        <input type="date" id="" title="" lang="en" />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6 dropdown">
+                        <label aria-required="true" for="" class="formTitle">Nationality <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" class="dropdownInput" placeholder="SEARCH" />
+                        <!-- 自訂的下拉選單 -->
+                        <div class="dropdownContent">
+                          <div class="dropdownItem">AMERICA</div>
+                          <div class="dropdownItem">AUSTRALIA</div>
+                          <div class="dropdownItem">BRAZIL</div>
+                          <div class="dropdownItem">CHINA</div>
+                          <div class="dropdownItem">INDIA</div>
+                          <div class="dropdownItem">INDONESIA</div>
+                          <div class="dropdownItem">ITALY</div>
+                          <div class="dropdownItem">MEXICO</div>
+                          <div class="dropdownItem">NEW ZEALAND</div>
+                          <div class="dropdownItem">POLAND</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6 dropdown">
+                        <label aria-required="true" for="" class="formTitle">Country / Place of Birth <abbr class="necessary" title="">*</abbr></label>
+                        <!-- 自訂的下拉選單 -->
+                        <input type="text" class="dropdownInput" placeholder="SEARCH" />
+                        <div class="dropdownContent">
+                          <div class="dropdownItem">AMERICA</div>
+                          <div class="dropdownItem">AUSTRALIA</div>
+                          <div class="dropdownItem">BRAZIL</div>
+                          <div class="dropdownItem">CHINA</div>
+                          <div class="dropdownItem">INDIA</div>
+                          <div class="dropdownItem">INDONESIA</div>
+                          <div class="dropdownItem">ITALY</div>
+                          <div class="dropdownItem">MEXICO</div>
+                          <div class="dropdownItem">NEW ZEALAND</div>
+                          <div class="dropdownItem">POLAND</div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">City / State or Pronvince </label>
+                        <input type="text" id="" title="City / State or Pronvince " />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-12 dropdown">
+                        <label aria-required="true" for="" class="formTitle">Place of Residence <abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" class="dropdownInput" placeholder="SEARCH" />
+                        <!-- 自訂的下拉選單 -->
+                        <div class="dropdownContent">
+                          <div class="dropdownItem">AMERICA</div>
+                          <div class="dropdownItem">AUSTRALIA</div>
+                          <div class="dropdownItem">BRAZIL</div>
+                          <div class="dropdownItem">CHINA</div>
+                          <div class="dropdownItem">INDIA</div>
+                          <div class="dropdownItem">INDONESIA</div>
+                          <div class="dropdownItem">ITALY</div>
+                          <div class="dropdownItem">MEXICO</div>
+                          <div class="dropdownItem">NEW ZEALAND</div>
+                          <div class="dropdownItem">POLAND</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Visa Type <abbr class="necessary" title="">*</abbr></label>
+                        <select name="" id="">
+                          <option readonly>SELECT OPTION</option>
+                          <option value="">AAA</option>
+                          <option value="">BBB</option>
+                          <option value="">CCC</option>
+                          <option value="">DDD</option>
+                          <option value="">...</option>
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Entry Permit / Visa Number </label>
+                        <input type="text" id="" title="City / State or Pronvince " />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Country / Region Code <abbr class="necessary" title="">*</abbr></label>
+                        <div class="inputWrap">
+                          <span>+</span>
+                          <input type="text" id="" value="" title="" maxlength="3" />
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Mobile Number<abbr class="necessary" title="">*</abbr></label>
+                        <input type="text" id="" title="" />
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Occupation<abbr class="necessary" title="">*</abbr></label>
+                        <select name="" id="">
+                          <option readonly>SELECT OPTION</option>
+                          <option value="">AAA</option>
+                          <option value="">BBB</option>
+                          <option value="">CCC</option>
+                          <option value="">DDD</option>
+                          <option value="">...</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="formGrp">
+                      <div class="col-6">
+                        <label aria-required="true" for="" class="formTitle">Email Address<abbr class="necessary" title="">*</abbr></label>
+                        <div class="checkGrp">
+                          <label> <input type="checkbox" name="" value="" title="Same as Lead Traveller" />Same as Lead Traveller</label>
+                        </div>
+                        <input type="email" id="" title="" />
+                      </div>
+                    </div>
+                    <div class="btnGrp between m_reverse">
+                      <button type="button" class="btn btnCancel">CANCEL</button>
+                      <div class="btnGrp">
+                        <button type="button" class="btn btnSecondary"><i class="i_add_people"></i>ADD TRAVELERS</button>
+                        <button type="button" class="btn btnPrimary">NEXT</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -180,8 +738,6 @@
       </footer>
       <!-- footer End -->
     </div>
-    <a href="javascript:;" class="scrollToTop" role="button">回頁首</a>
-
     <!-- lazyload -->
     <script src="vendor/lazyload/lazyload.js"></script>
     <!-- fancybox -->

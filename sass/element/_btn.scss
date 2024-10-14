@@ -1,22 +1,14 @@
 // 按鈕外框
 .btnGrp {
-  text-align: center;
-  padding: 1.5em 0;
-  &.center {
-    button,
-    .btn {
-      min-width: 236px;
-      @include screen('mobile') {
-        min-width: 130px;
-        max-width: 48%;
-      }
-    }
+  margin-top: 1em;
+  &:has(+ div) {
+    margin-bottom: 1em;
   }
 }
 
 // 按鈕的共用設定
-@mixin btnSetting($btnBg: #f1f1f1, $btnWordColor: $btnWordColor) {
-  background: $btnBg;
+@mixin btnSetting($btnBg: #f1f1f1, $btnWordColor: $colorWord) {
+  background-color: $btnBg;
   border: 1px solid darken($btnBg, 5);
   color: $btnWordColor;
   border-radius: $btnRadius;
@@ -24,6 +16,7 @@
   font-family: 'Century Gothic';
   text-shadow: none;
   font-weight: 700;
+  text-transform: uppercase;
   &:hover {
     background: darken($btnBg, 5); // Old browsers
     //border: 1px solid darken($btnBg, 15);
@@ -54,14 +47,17 @@
   //white-space: nowrap;
   line-height: normal;
   width: auto;
-  padding: $btnPadding;
-  min-width: 4em;
+  padding: 0.5em 1.25em;
+  min-width: 6em;
   //height: 44px;
   margin: 0.3em;
+  @include screen('mobile') {
+    padding: 0.5em 1em;
+  }
 
   i {
-    margin-right: 0.25em;
-    margin-left: 0.25em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
   }
 }
 // 按鈕基本樣式
@@ -74,6 +70,12 @@
   &:hover,
   &:focus-visible {
     outline: none;
+  }
+  &:has(> i) {
+    padding-right: 2em;
+    @include screen('mobile') {
+      padding-right: 1.5em;
+    }
   }
 }
 //按鈕顏色
@@ -131,7 +133,7 @@
 
 .btnSecondary {
   // @extend %btn;
-  @include btnSetting($colorSecondary, #fff);
+  @include btnSetting(#5db741, #fff);
   position: relative;
   background: linear-gradient(280deg, #0a7c1d 0%, #5db741 100%);
   //border: none;
@@ -153,7 +155,6 @@
   &:focus-visible {
     color: #fff;
     background: linear-gradient(280deg, #0a7c1d 0%, #5db741 100%);
-    border: none;
     &::before {
       opacity: 1;
     }
@@ -163,6 +164,10 @@
 // 一般按鈕
 .btnNormal {
   @include btnSetting(#f1f1f1, $colorLink);
+}
+
+a.btn {
+  text-transform: none;
 }
 
 // 返回
