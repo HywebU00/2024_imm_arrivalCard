@@ -40,56 +40,17 @@ window.addEventListener('load', () => {
 });
 // -----  基本功能開關   ---------------------------------------------------
 
-// 自行加入的JS請寫在這裡
-(function () {
-  //cp輪播
-  // const cpSwiper = new Swiper('.cpSlider .swiper', {
-  //   slidesPerView: 4,
-  //   spaceBetween: 20,
-  //   loop: false,
-  //   // 切換點
-  //   pagination: {
-  //     el: '.cpSlider .swiperDots',
-  //     bulletElement: 'button',
-  //     clickable: true,
-  //   },
-  //   // 切換箭頭
-  //   navigation: {
-  //     nextEl: '.cpSlider .nextSlider', //自行設定樣式
-  //     prevEl: '.cpSlider .prevSlider', //自行設定樣式
-  //     disabledClass: 'swiperArrow-disabled', //不可點選樣式
-  //   },
-  //   breakpoints: {
-  //     100: {
-  //       slidesPerView: 2,
-  //     },
-  //     767: {
-  //       slidesPerView: 4,
-  //     },
-  //   },
-  // });
-})();
+document.addEventListener('DOMContentLoaded', function () {
+  const header = document.querySelector('header');
+  const main = document.querySelector('.main');
 
-(function () {
-  function adjustMainPadding() {
-    var header = document.querySelector('.header');
-    var main = document.querySelector('main');
-    var headerHeight = header.offsetHeight;
-
-    // 只在螢幕寬度 >= 768px 時執行
-    if (window.innerWidth >= 768) {
-      main.style.paddingTop = headerHeight + 'px';
-    } else {
-      main.style.paddingTop = '60px';
-    }
+  function adjustPadding() {
+    main.style.paddingTop = header.offsetHeight + 'px';
   }
 
-  window.onscroll = function () {
-    var header = document.querySelector('.header');
-
-    // 判斷螢幕寬度是否大於等於768px
+  function checkScroll() {
     if (window.innerWidth >= 768) {
-      if (window.scrollY > 30) {
+      if (window.scrollY >= 50) {
         header.classList.add('fixed');
       } else {
         header.classList.remove('fixed');
@@ -97,14 +58,14 @@ window.addEventListener('load', () => {
     } else {
       header.classList.remove('fixed');
     }
-  };
+  }
 
-  // 當視窗大小改變時，重新檢查
-  window.onresize = adjustMainPadding;
+  window.addEventListener('scroll', checkScroll);
+  window.addEventListener('resize', adjustPadding);
 
-  // 當頁面加載時，設置適當的padding-top
-  window.onload = adjustMainPadding;
-})();
+  // 初始化時設置 padding
+  adjustPadding();
+});
 
 //=============語系選單===============
 document.addEventListener('DOMContentLoaded', function () {
@@ -431,3 +392,33 @@ function toggleDropdownDirection(dropdown, content) {
     content.classList.add('downward');
   }
 }
+
+// 自行加入的JS請寫在這裡
+(function () {
+  //cp輪播
+  const cpSwiper = new Swiper('.cpSlider .swiper', {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    loop: false,
+    // 切換點
+    pagination: {
+      el: '.cpSlider .swiperDots',
+      bulletElement: 'button',
+      clickable: true,
+    },
+    // 切換箭頭
+    navigation: {
+      nextEl: '.cpSlider .nextSlider', //自行設定樣式
+      prevEl: '.cpSlider .prevSlider', //自行設定樣式
+      disabledClass: 'swiperArrow-disabled', //不可點選樣式
+    },
+    breakpoints: {
+      100: {
+        slidesPerView: 2,
+      },
+      767: {
+        slidesPerView: 4,
+      },
+    },
+  });
+})();
