@@ -2092,6 +2092,7 @@ em[tooltip]:focus-visible {
 }
 @media screen and (max-width: 991px) {
   .header {
+    display: block;
     min-height: 120px;
   }
 }

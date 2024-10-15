@@ -103,6 +103,7 @@
   transition: 0.3s linear;
   transform-origin: top center;
   @include screen('tablet') {
+    display: block;
     min-height: 120px;
   }
   @include screen('mobile') {
