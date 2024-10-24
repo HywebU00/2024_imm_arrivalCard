@@ -2135,7 +2135,8 @@ em[tooltip]:focus-visible {
   transform: scale(0.8);
 }
 .header > .container {
-  max-width: 1400px;
+  max-width: 100%;
+  width: 1400px;
   overflow: visible;
   position: relative;
   display: flex;
@@ -2174,13 +2175,6 @@ em[tooltip]:focus-visible {
     height: 60px;
     margin: 0;
   }
-  .header h1 img {
-    width: auto;
-    height: auto;
-    max-height: 54px;
-    margin: 0px auto;
-    transform: scale(0.9);
-  }
 }
 .header h1 a {
   display: inline-block;
@@ -2191,6 +2185,15 @@ em[tooltip]:focus-visible {
   max-height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+@media screen and (max-width: 767px) {
+  .header h1 img {
+    width: auto;
+    height: auto;
+    max-height: 54px;
+    margin: 0px auto;
+    transform: scale(0.9);
+  }
 }
 .header .rightSide {
   display: flex;
@@ -5149,6 +5152,7 @@ h2.title {
 .instruction {
   font-family: "Century Gothic";
   font-size: 1.125rem;
+  margin: 2em 0;
 }
 .instruction .instructionTitle {
   font-size: 1.375rem;
@@ -6419,6 +6423,12 @@ br {
   display: flex;
   justify-content: flex-end;
   position: relative;
+  gap: 40px;
+}
+@media screen and (max-width: 767px) {
+  .heroSection .container {
+    flex-wrap: wrap;
+  }
 }
 @media screen and (max-width: 575px) {
   .heroSection .container {
@@ -6430,8 +6440,9 @@ br {
   display: flex;
   flex-direction: column;
   width: 465px;
-  max-width: 100%;
-  padding: 2.2em 1.8em;
+  flex: 0 0 465px;
+  max-width: 465px;
+  padding: 2.2em 1.5em;
   color: #fff;
   font-weight: bold;
   font-size: 1.25rem;
@@ -6439,6 +6450,7 @@ br {
 @media screen and (max-width: 575px) {
   .heroSection .linkGrp {
     padding: 1.5em 1em;
+    max-width: 100%;
   }
 }
 .heroSection .linkGrp > * {
@@ -6490,7 +6502,7 @@ br {
   border-radius: 16px;
   text-align: left;
   transform: perspective(1px) translateZ(0);
-  padding: 1.2em 3.2em 1.2em 1.6em;
+  padding: 1.2em 3.2em 1.2em 1.5em;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.35);
   margin-bottom: 15px;
   overflow: hidden;
@@ -6498,7 +6510,7 @@ br {
 }
 @media screen and (max-width: 575px) {
   .heroSection .linkGrp a.btn {
-    padding: 1em 3em 1em 1.2em;
+    padding: 1em 2.5em 1em 1em;
   }
 }
 .heroSection .linkGrp a.btn:after {
@@ -6513,6 +6525,11 @@ br {
   background: url(../images/icon/icon_arrow_right2.svg) no-repeat center center;
   background-size: contain;
   transition: 0.2s ease-out;
+}
+@media screen and (max-width: 575px) {
+  .heroSection .linkGrp a.btn:after {
+    right: 0.8em;
+  }
 }
 .heroSection .linkGrp a.btn:hover::after {
   transform: translateY(-50%) translateX(5px);
@@ -6544,6 +6561,39 @@ br {
 }
 .heroSection .linkGrp .helpLink:hover {
   color: #bf4c00;
+}
+.heroSection .titleImg {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 0 80px;
+  flex: 0 1 auto;
+}
+@media screen and (max-width: 1180px) {
+  .heroSection .titleImg {
+    padding: 0 0 0 80px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .heroSection .titleImg {
+    display: none;
+  }
+}
+.heroSection .titleImg .twac {
+  max-width: 220px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 991px) {
+  .heroSection .titleImg .twac {
+    width: 150px;
+  }
+}
+.heroSection .titleImg .twac_long {
+  max-width: 390px;
+}
+@media screen and (max-width: 991px) {
+  .heroSection .titleImg .twac_long {
+    width: 250px;
+  }
 }
 
 .submitQA {
