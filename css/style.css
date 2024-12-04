@@ -6356,12 +6356,13 @@ br {
 @media screen and (max-width: 767px) {
   .mp main {
     background-size: 1400px;
+    background-position: left 45% top;
   }
 }
 @media screen and (max-width: 575px) {
   .mp main {
-    background-size: contain;
-    background-position: top 30px center;
+    background-size: calc(100% + 50px);
+    background-position: top 30px left -50px;
   }
 }
 .mp main .container {
@@ -6390,7 +6391,7 @@ br {
 }
 @media screen and (max-width: 575px) {
   .heroSection {
-    padding-top: 120px;
+    padding-top: 20px;
   }
 }
 .heroSection::before {
@@ -6425,7 +6426,7 @@ br {
   position: relative;
   gap: 40px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .heroSection .container {
     flex-wrap: wrap;
   }
@@ -6575,7 +6576,15 @@ br {
 }
 @media screen and (max-width: 575px) {
   .heroSection .titleImg {
-    display: none;
+    transform: scale(0.8);
+    transform-origin: right top;
+    margin-left: auto;
+    margin-bottom: 60px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .heroSection .titleImg {
+    margin-bottom: 20px;
   }
 }
 .heroSection .titleImg .twac {
