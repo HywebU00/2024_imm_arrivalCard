@@ -4061,13 +4061,15 @@ table.tableSprite tr:nth-child(even) {
   opacity: 0.75;
 }
 .travelerInfo > .tabItems2 .tabBtn2.active {
-  border-color: rgba(255, 255, 255, 0.5);
-  background: linear-gradient(130deg, #e3f7f5 -2.5%, #fff 80%);
+  border-color: #1a5e9e;
+  background-color: #1a5e9e;
   box-shadow: -15px 20px 30px -15px rgba(0, 0, 0, 0.1), -15px -20px 30px -15px rgba(0, 0, 0, 0.1);
   cursor: default;
 }
 .travelerInfo > .tabItems2 .tabBtn2.active::after {
   opacity: 1;
+  background: url(../images/icon/icon_user2.svg) top 0.8em center no-repeat;
+  background-size: 28px;
 }
 @media screen and (max-width: 991px) {
   .travelerInfo > .tabItems2 .tabBtn2.active {
@@ -4103,8 +4105,11 @@ table.tableSprite tr:nth-child(even) {
   pointer-events: none;
   cursor: pointer;
 }
+.travelerInfo > .tabItems2 .tabBtn2.active .order {
+  color: #fff;
+}
 .travelerInfo > .tabItems2 .tabBtn2.active .name {
-  font-weight: 600;
+  color: #fff;
 }
 .travelerInfo .tabContentGroup2 {
   flex: 1 1 auto;

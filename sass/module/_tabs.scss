@@ -311,12 +311,15 @@
         opacity: 0.75;
       }
       &.active {
-        border-color: rgba(255, 255, 255, 0.5);
-        background: linear-gradient(130deg, #e3f7f5 -2.5%, #fff 80%);
+        border-color: mix($colorPrimary, #fff, 90%);
+        //background: linear-gradient(130deg, #e3f7f5 -2.5%, #fff 80%);
+        background-color: mix($colorPrimary, #fff, 90%);
         box-shadow: -15px 20px 30px -15px rgba(0, 0, 0, 0.1), -15px -20px 30px -15px rgba(0, 0, 0, 0.1);
         cursor: default;
         &::after {
           opacity: 1;
+          background: url(../images/icon/icon_user2.svg) top 0.8em center no-repeat;
+          background-size: 28px;
         }
         @include screen('tablet') {
           border-radius: 9px;
@@ -348,8 +351,12 @@
         cursor: pointer;
       }
       &.active {
+        .order {
+          color: #fff;
+        }
         .name {
-          font-weight: 600;
+          //font-weight: 600;
+          color: #fff;
         }
       }
     }
