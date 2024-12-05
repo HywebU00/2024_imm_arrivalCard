@@ -3983,6 +3983,7 @@ table.tableSprite tr:nth-child(even) {
   background-size: 20px;
   cursor: pointer;
   transition: 0.2s ease-in;
+  opacity: 0.65;
 }
 @media screen and (max-width: 991px) {
   .travelerInfo > .tabItems2 .toggleBtn {
