@@ -4043,6 +4043,7 @@ table.tableSprite tr:nth-child(even) {
 }
 .travelerInfo > .tabItems2 .tabBtn2:hover {
   background-color: #eee;
+  border-color: #eee;
 }
 .travelerInfo > .tabItems2 .tabBtn2:hover::before {
   opacity: 0.85;
