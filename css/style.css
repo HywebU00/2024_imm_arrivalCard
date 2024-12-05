@@ -3981,7 +3981,6 @@ table.tableSprite tr:nth-child(even) {
   border-radius: 0 9px 9px 0;
   background: #fff url(../images/icon/icon_arrow_down_dark.svg) center no-repeat;
   background-size: 20px;
-  opacity: 0.5;
   cursor: pointer;
   transition: 0.2s ease-in;
 }
@@ -4074,7 +4073,6 @@ table.tableSprite tr:nth-child(even) {
 @media screen and (max-width: 991px) {
   .travelerInfo > .tabItems2 .tabBtn2.active {
     border-radius: 9px;
-    background: linear-gradient(160deg, #e3f7f5 6%, #fff 100%);
     box-shadow: none;
     display: block;
   }
