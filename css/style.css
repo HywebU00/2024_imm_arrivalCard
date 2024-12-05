@@ -4007,12 +4007,12 @@ table.tableSprite tr:nth-child(even) {
   text-align: left;
   pointer-events: fill;
   border-radius: 9px 0px 0px 9px;
-  background-color: #ccc;
+  background-color: #e9e9e9;
   box-shadow: -78px 0px 70px -70px rgba(0, 0, 0, 0.15) inset;
   transition: 0.2s ease-in;
   border-width: 2px 0 2px 2px;
   border-style: solid;
-  border-color: transparent;
+  border-color: #e8e8e8;
 }
 @media screen and (max-width: 991px) {
   .travelerInfo > .tabItems2 .tabBtn2 {
@@ -4042,7 +4042,7 @@ table.tableSprite tr:nth-child(even) {
   }
 }
 .travelerInfo > .tabItems2 .tabBtn2:hover {
-  background-color: rgb(190, 190, 190);
+  background-color: #eee;
 }
 .travelerInfo > .tabItems2 .tabBtn2:hover::before {
   opacity: 0.85;
@@ -4061,7 +4061,7 @@ table.tableSprite tr:nth-child(even) {
 }
 .travelerInfo > .tabItems2 .tabBtn2.active {
   border-color: rgba(255, 255, 255, 0.5);
-  background: linear-gradient(130deg, #f2f7f7 -2.5%, #fff 67%);
+  background: linear-gradient(130deg, #e3f7f5 -2.5%, #fff 80%);
   box-shadow: -15px 20px 30px -15px rgba(0, 0, 0, 0.1), -15px -20px 30px -15px rgba(0, 0, 0, 0.1);
   cursor: default;
 }
@@ -4071,7 +4071,7 @@ table.tableSprite tr:nth-child(even) {
 @media screen and (max-width: 991px) {
   .travelerInfo > .tabItems2 .tabBtn2.active {
     border-radius: 9px;
-    background: linear-gradient(160deg, #f0f7f7 6%, #fff 100%);
+    background: linear-gradient(160deg, #e3f7f5 6%, #fff 100%);
     box-shadow: none;
     display: block;
   }
@@ -4101,6 +4101,9 @@ table.tableSprite tr:nth-child(even) {
 .travelerInfo > .tabItems2 .tabBtn2 > * {
   pointer-events: none;
   cursor: pointer;
+}
+.travelerInfo > .tabItems2 .tabBtn2.active .name {
+  font-weight: 600;
 }
 .travelerInfo .tabContentGroup2 {
   flex: 1 1 auto;
