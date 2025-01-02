@@ -5354,9 +5354,9 @@ h2.title {
 @media screen and (max-width: 767px) {
   .successful {
     text-align: center;
-    padding: 80px 20px 20px;
+    padding: 65px 15px 15px;
     background-size: 50px;
-    background-position: top 20px center;
+    background-position: top 15px center;
   }
 }
 
