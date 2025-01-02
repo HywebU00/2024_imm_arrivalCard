@@ -233,11 +233,10 @@
       display: none;
       width: 70px;
       border-radius: 0 9px 9px 0;
-      background: #fff url(../images/icon/icon_arrow_down_dark.svg) center no-repeat;
+      background: rgba(0, 0, 0, 0.25) url(../images/icon/icon_arrow_down.svg) center no-repeat;
       background-size: 20px;
       cursor: pointer;
       transition: 0.2s ease-in;
-      opacity: 0.65;
       @include screen('tablet') {
         display: block;
       }
@@ -270,7 +269,7 @@
         border-radius: 0px;
         margin-bottom: 0;
         box-shadow: none;
-        background-color: #ddd;
+        //background-color: #ddd;
         border-bottom: 1px solid #eee;
         min-height: auto;
         padding-right: 80px;
