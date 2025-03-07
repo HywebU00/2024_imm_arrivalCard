@@ -199,6 +199,9 @@
     flex: 0 0 300px;
     flex-direction: column;
     position: relative;
+    @media (max-width: 1180px) and (min-width: 992px) {
+      flex-basis: 250px;
+    }
     @include screen('tablet') {
       overflow: hidden;
       position: absolute;
@@ -341,9 +344,11 @@
       .name {
         color: $colorSecondary;
         font-size: rem(24);
-        @include screen('tablet') {
+        @media screen and (max-width: 1180px) {
           font-size: rem(20);
         }
+        // @include screen('tablet') {
+        // }
       }
       > * {
         pointer-events: none;

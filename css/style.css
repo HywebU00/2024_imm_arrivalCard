@@ -2840,7 +2840,7 @@ select::-ms-expand {
 .btnGrp,
 .uploadGrp {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -3944,6 +3944,11 @@ table.tableSprite tr:nth-child(even) {
   flex-direction: column;
   position: relative;
 }
+@media (max-width: 1180px) and (min-width: 992px) {
+  .travelerInfo > .tabItems2 {
+    flex-basis: 250px;
+  }
+}
 @media screen and (max-width: 991px) {
   .travelerInfo > .tabItems2 {
     overflow: hidden;
@@ -4093,7 +4098,7 @@ table.tableSprite tr:nth-child(even) {
   color: #11631e;
   font-size: 1.5rem;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1180px) {
   .travelerInfo > .tabItems2 .tabBtn2 .name {
     font-size: 1.25rem;
   }
