@@ -30,6 +30,24 @@ body {
     overflow-y: auto;
     background: #fff;
   }
+  &.mp {
+    background: #fff url(../images/heroimg.jpg) top center no-repeat;
+    background-size: 1920px;
+    @media screen and (min-width: 1920px) {
+      background-size: 100%;
+    }
+    @include screen('tablet') {
+      background-size: 1600px;
+    }
+    @include screen('mobile') {
+      background-size: 1400px;
+      background-position: left 45% top;
+    }
+    @include screen('xsMobile') {
+      background-size: calc(100% + 50px);
+      background-position: top 30px left -50px;
+    }
+  }
 }
 // 整體共用container樣式，請注意首頁切版頁面的整齊
 .container {

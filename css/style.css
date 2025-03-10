@@ -4970,6 +4970,32 @@ body.noscroll {
     background: #fff;
   }
 }
+.wrapper.mp {
+  background: #fff url(../images/heroimg.jpg) top center no-repeat;
+  background-size: 1920px;
+}
+@media screen and (min-width: 1920px) {
+  .wrapper.mp {
+    background-size: 100%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .wrapper.mp {
+    background-size: 1600px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wrapper.mp {
+    background-size: 1400px;
+    background-position: left 45% top;
+  }
+}
+@media screen and (max-width: 575px) {
+  .wrapper.mp {
+    background-size: calc(100% + 50px);
+    background-position: top 30px left -50px;
+  }
+}
 
 .container {
   margin: 0 auto;
@@ -6359,32 +6385,6 @@ br {
 .mp .header.fixed::before {
   background: linear-gradient(10deg, #91cdb9 -6%, #1863ac 65%);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
-}
-.mp main {
-  background: #fff url(../images/heroimg.jpg) top center no-repeat;
-  background-size: 1920px;
-}
-@media screen and (min-width: 1920px) {
-  .mp main {
-    background-size: 100%;
-  }
-}
-@media screen and (max-width: 991px) {
-  .mp main {
-    background-size: 1600px;
-  }
-}
-@media screen and (max-width: 767px) {
-  .mp main {
-    background-size: 1400px;
-    background-position: left 45% top;
-  }
-}
-@media screen and (max-width: 575px) {
-  .mp main {
-    background-size: calc(100% + 50px);
-    background-position: top 30px left -50px;
-  }
 }
 .mp main .container {
   max-width: 1260px;

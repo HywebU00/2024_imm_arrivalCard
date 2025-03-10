@@ -16,22 +16,22 @@
   }
 
   main {
-    background: #fff url(../images/heroimg.jpg) top center no-repeat;
-    background-size: 1920px;
-    @media screen and (min-width: 1920px) {
-      background-size: 100%;
-    }
-    @include screen('tablet') {
-      background-size: 1600px;
-    }
-    @include screen('mobile') {
-      background-size: 1400px;
-      background-position: left 45% top;
-    }
-    @include screen('xsMobile') {
-      background-size: calc(100% + 50px);
-      background-position: top 30px left -50px;
-    }
+    // background: #fff url(../images/heroimg.jpg) top center no-repeat;
+    // background-size: 1920px;
+    // @media screen and (min-width: 1920px) {
+    //   background-size: 100%;
+    // }
+    // @include screen('tablet') {
+    //   background-size: 1600px;
+    // }
+    // @include screen('mobile') {
+    //   background-size: 1400px;
+    //   background-position: left 45% top;
+    // }
+    // @include screen('xsMobile') {
+    //   background-size: calc(100% + 50px);
+    //   background-position: top 30px left -50px;
+    // }
     .container {
       max-width: 1260px;
     }
