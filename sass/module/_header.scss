@@ -105,6 +105,8 @@
   @include screen('tablet') {
     display: block;
     min-height: 120px;
+    height: 120px;
+    position: fixed;
   }
   @include screen('mobile') {
     width: 100%;

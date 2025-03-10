@@ -2094,6 +2094,8 @@ em[tooltip]:focus-visible {
   .header {
     display: block;
     min-height: 120px;
+    height: 120px;
+    position: fixed;
   }
 }
 @media screen and (max-width: 767px) {
@@ -4984,6 +4986,11 @@ body.noscroll {
   padding-top: 0;
   margin: 0 auto;
   transition: padding-top 0.3s linear;
+}
+@media screen and (max-width: 991px) {
+  .main {
+    padding-top: 120px;
+  }
 }
 @media screen and (max-width: 767px) {
   .main {

@@ -50,6 +50,9 @@ body {
   margin: 0 auto;
   transition: padding-top 0.3s linear;
 
+  @include screen('tablet') {
+    padding-top: 120px;
+  }
   @include screen('mobile') {
     padding-top: 60px;
   }
