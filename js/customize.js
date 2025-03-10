@@ -40,31 +40,71 @@ window.addEventListener('load', () => {
 });
 // -----  基本功能開關   ---------------------------------------------------
 
+// document.addEventListener('DOMContentLoaded', function () {
+//   const header = document.querySelector('header');
+//   const main = document.querySelector('.main');
+
+//   function adjustPadding() {
+//     main.style.paddingTop = header.offsetHeight + 'px';
+//   }
+
+//   function checkScroll() {
+//     if (window.innerWidth >= 992) {
+//       if (window.scrollY >= 50) {
+//         header.classList.add('fixed');
+//       } else {
+//         header.classList.remove('fixed');
+//       }
+//     } else {
+//       header.classList.remove('fixed');
+//     }
+//   }
+
+//   window.addEventListener('scroll', checkScroll);
+//   window.addEventListener('resize', adjustPadding);
+
+//   // 初始化時設置 padding
+//   adjustPadding();
+// });
+
 document.addEventListener('DOMContentLoaded', function () {
   const header = document.querySelector('header');
   const main = document.querySelector('.main');
 
   function adjustPadding() {
-    main.style.paddingTop = header.offsetHeight + 'px';
+    if (header.classList.contains('fixed')) {
+      main.style.paddingTop = header.offsetHeight + 'px';
+    } else {
+      main.style.removeProperty('padding-top');
+    }
   }
 
   function checkScroll() {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 992) {
       if (window.scrollY >= 50) {
-        header.classList.add('fixed');
+        if (!header.classList.contains('fixed')) {
+          header.classList.add('fixed');
+          adjustPadding(); // 確保 padding 只在 .fixed 加入時更新
+        }
       } else {
-        header.classList.remove('fixed');
+        if (header.classList.contains('fixed')) {
+          header.classList.remove('fixed');
+          adjustPadding(); // 確保 padding 在 .fixed 移除時也更新
+        }
       }
     } else {
-      header.classList.remove('fixed');
+      if (header.classList.contains('fixed')) {
+        header.classList.remove('fixed');
+        adjustPadding();
+      }
     }
   }
 
   window.addEventListener('scroll', checkScroll);
   window.addEventListener('resize', adjustPadding);
 
-  // 初始化時設置 padding
-  adjustPadding();
+  // 初始化時設置
+  checkScroll();
 });
 
 //=============語系選單===============
@@ -278,7 +318,7 @@ if (tabButtons2.length > 0 && tabContents2.length > 0) {
   function handleScroll() {
     const screenWidth = window.innerWidth;
 
-    // 只有在螢幕寬度小於768px時才處理
+    // 只有在螢幕寬度小於992px時才處理
     if (screenWidth < 992) {
       const headerHeight = header ? header.offsetHeight : 0; // 獲取 header 的高度
       const tabItems2Rect = tabItems2.getBoundingClientRect(); // 獲取 tabItems2 相對於視窗頂部的位置

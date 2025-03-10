@@ -2081,7 +2081,7 @@ em[tooltip]:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  position: relative;
   width: 100%;
   min-height: 190px;
   top: 0;
@@ -4981,6 +4981,7 @@ body.noscroll {
 
 .main {
   position: relative;
+  padding-top: 0;
   margin: 0 auto;
   transition: padding-top 0.3s linear;
 }
