@@ -470,62 +470,62 @@ function topNav() {
 // ----- webSearch設定 ------------------------------------------------
 // -----------------------------------------------------------------------
 
-function webSearch() {
-  const siteHeader = document.querySelector('.header .container');
-  const webSearch = document.querySelector('.wrapper .webSearch');
-  const searchBtn = document.querySelector('.wrapper .webSearchBtn button');
-  const menuOverlay = document.querySelector('.menuOverlay');
-  const webSearchBtn = document.createElement('button');
-  const webSearchB = document.querySelector('.webSearch.typeB');
+// function webSearch() {
+//   const siteHeader = document.querySelector('.header .container');
+//   const webSearch = document.querySelector('.wrapper .webSearch');
+//   const searchBtn = document.querySelector('.wrapper .webSearchBtn button');
+//   const menuOverlay = document.querySelector('.menuOverlay');
+//   const webSearchBtn = document.createElement('button');
+//   const webSearchB = document.querySelector('.webSearch.typeB');
 
-  const fontSize = document.querySelector('.fontSize');
-  const language = document.querySelector('.wrapper .language');
+//   const fontSize = document.querySelector('.fontSize');
+//   const language = document.querySelector('.wrapper .language');
 
-  webSearchBtn.classList.add('mobileSearchBtn');
+//   webSearchBtn.classList.add('mobileSearchBtn');
 
-  fontSize && webSearchB ? fontSize.querySelector('button').addEventListener('click', (e) => jsSlideUp(webSearchB)) : null;
-  language && webSearchB ? language.querySelector('button').addEventListener('click', (e) => jsSlideUp(webSearchB)) : null;
+//   fontSize && webSearchB ? fontSize.querySelector('button').addEventListener('click', (e) => jsSlideUp(webSearchB)) : null;
+//   language && webSearchB ? language.querySelector('button').addEventListener('click', (e) => jsSlideUp(webSearchB)) : null;
 
-  siteHeader.append(webSearchBtn);
+//   siteHeader.append(webSearchBtn);
 
-  if (webSearchBtn) {
-    webSearchBtn.addEventListener('click', (e) => {
-      jsSlideToggle(webSearch);
-      jsFadeToggle(menuOverlay);
-    });
-  }
+//   if (webSearchBtn) {
+//     webSearchBtn.addEventListener('click', (e) => {
+//       jsSlideToggle(webSearch);
+//       jsFadeToggle(menuOverlay);
+//     });
+//   }
 
-  if (searchBtn) {
-    searchBtn.addEventListener('click', (e) => {
-      jsSlideToggle(webSearch);
-      // jsFadeToggle(menuOverlay);
+//   if (searchBtn) {
+//     searchBtn.addEventListener('click', (e) => {
+//       jsSlideToggle(webSearch);
+//       // jsFadeToggle(menuOverlay);
 
-      language ? jsSlideUp(language.querySelector('ul')) : null;
-      fontSize ? jsSlideUp(fontSize.querySelector('ul')) : null;
-    });
-    searchBtn.addEventListener('keydown', (e) => {
-      let target = webSearch.querySelectorAll('a, button');
-      if (e.which === 9 && !e.shiftKey) {
-        //tab
-        jsSlideToggle(webSearch);
-        [...target][target.length - 1].addEventListener('focusout', function (e) {
-          jsSlideUp(webSearch);
-          jsFadeOut(menuOverlay);
-        });
-      } else if (e.which === 9 && e.shiftKey) {
-      } else if (e.which === 27) {
-        jsSlideUp(webSearch);
-        jsFadeOut(menuOverlay);
-      }
-    });
-  }
+//       language ? jsSlideUp(language.querySelector('ul')) : null;
+//       fontSize ? jsSlideUp(fontSize.querySelector('ul')) : null;
+//     });
+//     searchBtn.addEventListener('keydown', (e) => {
+//       let target = webSearch.querySelectorAll('a, button');
+//       if (e.which === 9 && !e.shiftKey) {
+//         //tab
+//         jsSlideToggle(webSearch);
+//         [...target][target.length - 1].addEventListener('focusout', function (e) {
+//           jsSlideUp(webSearch);
+//           jsFadeOut(menuOverlay);
+//         });
+//       } else if (e.which === 9 && e.shiftKey) {
+//       } else if (e.which === 27) {
+//         jsSlideUp(webSearch);
+//         jsFadeOut(menuOverlay);
+//       }
+//     });
+//   }
 
-  menuOverlay?.addEventListener('click', (e) => {
-    jsSlideUp(webSearch);
-    menuOverlay ? menuOverlay.style.removeProperty('z-index') : null;
-    jsFadeOut(menuOverlay);
-  });
-}
+//   menuOverlay?.addEventListener('click', (e) => {
+//     jsSlideUp(webSearch);
+//     menuOverlay ? menuOverlay.style.removeProperty('z-index') : null;
+//     jsFadeOut(menuOverlay);
+//   });
+// }
 
 // -----------------------------------------------------------------------
 // ----- 手機桌機版本切換及手機版menu設定 -------------------------------------
@@ -1347,74 +1347,74 @@ scrollToTop('.scrollToTop');
 // -----  FontSize   -----------------------------------------------------
 // -----------------------------------------------------------------------
 
-function fontSize() {
-  const el = document.querySelector('.fontSize'); // 控制的對象
-  const elB = document.querySelector('.fontSize.typeB'); // 控制的對象
-  const list = el.querySelectorAll('ul button');
-  const body = document.querySelector('body');
-  if (elB) {
-    xSlider('.fontSize.typeB > button', '.fontSize ul');
-  }
-  if (el) {
-    list.forEach((v) => {
-      v.addEventListener('click', (e) => {
-        createCookie('FontSize', `${e.target.className}`, 356);
-        toggleClass(e.target.className);
-        e.target.classList.add('active');
-      });
-    });
+// function fontSize() {
+//   const el = document.querySelector('.fontSize'); // 控制的對象
+//   const elB = document.querySelector('.fontSize.typeB'); // 控制的對象
+//   const list = el.querySelectorAll('ul button');
+//   const body = document.querySelector('body');
+//   if (elB) {
+//     xSlider('.fontSize.typeB > button', '.fontSize ul');
+//   }
+//   if (el) {
+//     list.forEach((v) => {
+//       v.addEventListener('click', (e) => {
+//         createCookie('FontSize', `${e.target.className}`, 356);
+//         toggleClass(e.target.className);
+//         e.target.classList.add('active');
+//       });
+//     });
 
-    // 移除 active 的 class 名稱
-    function toggleClass(targetClassName) {
-      list.forEach((i) => i.classList.remove('active'));
-      switch (targetClassName) {
-        case 'small':
-          body.classList.remove('largeSize', 'mediumSize');
-          body.classList.add('smallSize');
-          break;
-        case 'medium':
-          body.classList.remove('smallSize', 'largeSize');
-          body.classList.add('mediumSize');
-          break;
-        case 'large':
-          body.classList.remove('smallSize', 'mediumSize');
-          body.classList.add('largeSize');
-          break;
-      }
-    }
+//     // 移除 active 的 class 名稱
+//     function toggleClass(targetClassName) {
+//       list.forEach((i) => i.classList.remove('active'));
+//       switch (targetClassName) {
+//         case 'small':
+//           body.classList.remove('largeSize', 'mediumSize');
+//           body.classList.add('smallSize');
+//           break;
+//         case 'medium':
+//           body.classList.remove('smallSize', 'largeSize');
+//           body.classList.add('mediumSize');
+//           break;
+//         case 'large':
+//           body.classList.remove('smallSize', 'mediumSize');
+//           body.classList.add('largeSize');
+//           break;
+//       }
+//     }
 
-    // 創造新的 字體大小設定
-    function createCookie(name, value, days) {
-      let _expires;
-      const _date = new Date();
-      if (days) {
-        _date.setTime(_date.getTime() + days * 24 * 60 * 60 * 1000);
-        _expires = '; expires=' + _date.toGMTString();
-      } else {
-        _expires = '';
-      }
-      document.cookie = name + '=' + value + _expires + '; path=/';
-    }
+//     // 創造新的 字體大小設定
+//     function createCookie(name, value, days) {
+//       let _expires;
+//       const _date = new Date();
+//       if (days) {
+//         _date.setTime(_date.getTime() + days * 24 * 60 * 60 * 1000);
+//         _expires = '; expires=' + _date.toGMTString();
+//       } else {
+//         _expires = '';
+//       }
+//       document.cookie = name + '=' + value + _expires + '; path=/';
+//     }
 
-    // 讀取瀏覽器上 字體大小設定
-    function readCookie(name) {
-      const value = `; ${document.cookie}`;
-      const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop().split(';').shift();
-    }
+//     // 讀取瀏覽器上 字體大小設定
+//     function readCookie(name) {
+//       const value = `; ${document.cookie}`;
+//       const parts = value.split(`; ${name}=`);
+//       if (parts.length === 2) return parts.pop().split(';').shift();
+//     }
 
-    // 初始化 字體大小設定
-    let cookie = readCookie('FontSize');
-    // 如果沒有cookie 則預設值為'medium'
-    if (!cookie) {
-      cookie = 'medium';
-    }
-    document.querySelectorAll(`.${cookie}`).forEach((i) => {
-      i.classList.add('active');
-      body.classList.add(`${cookie}Size`);
-    });
-  }
-}
+//     // 初始化 字體大小設定
+//     let cookie = readCookie('FontSize');
+//     // 如果沒有cookie 則預設值為'medium'
+//     if (!cookie) {
+//       cookie = 'medium';
+//     }
+//     document.querySelectorAll(`.${cookie}`).forEach((i) => {
+//       i.classList.add('active');
+//       body.classList.add(`${cookie}Size`);
+//     });
+//   }
+// }
 
 // window.addEventListener('load', function (e) {
 //   console.log('a');
