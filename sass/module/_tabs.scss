@@ -194,6 +194,12 @@
 
   @include screen('tablet') {
     flex-wrap: wrap;
+    &::before {
+      content: '';
+      display: block;
+      height: 10px;
+      width: 100%;
+    }
   }
   & > .tabItems2 {
     flex: 0 0 300px;

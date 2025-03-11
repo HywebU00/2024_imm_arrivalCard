@@ -234,7 +234,7 @@ function handleResize() {
           });
         }
 
-        toggleBtn.style.height = activeTabBtn2Height - 1 + 'px';
+        toggleBtn.style.height = activeTabBtn2Height + 'px';
         hideInactiveTabBtns2();
 
         tabBtns2.forEach((btn) => {
@@ -252,27 +252,41 @@ function handleResize() {
       if (toggleBtn) {
         toggleBtn.remove();
         toggleBtn = null;
-        showAllTabBtns2();
       }
+
+      showAllTabBtns2();
     }
   }
 }
 
 // 處理每個 tabBtn2 的點擊事件
 function handleTabClick2(clickedBtn) {
+  const screenWidth = window.innerWidth;
+
   tabBtns2.forEach((btn) => {
-    if (btn !== clickedBtn) {
-      btn.style.display = 'none';
-    } else {
-      btn.classList.add('active');
-    }
+    btn.classList.remove('active');
   });
 
-  checkTabVisibility2();
+  clickedBtn.classList.add('active');
 
-  const newActiveTabBtn2Height = clickedBtn.offsetHeight;
-  toggleBtn.style.height = newActiveTabBtn2Height + 'px';
-  tabContentGroup2.style.paddingTop = newActiveTabBtn2Height + 10 + 'px';
+  if (screenWidth < 992) {
+    tabBtns2.forEach((btn) => {
+      if (btn !== clickedBtn) {
+        btn.style.display = 'none';
+      } else {
+        btn.style.display = 'block';
+      }
+    });
+
+    checkTabVisibility2();
+
+    const newActiveTabBtn2Height = clickedBtn.offsetHeight;
+    toggleBtn.style.height = newActiveTabBtn2Height + 'px';
+    tabContentGroup2.style.paddingTop = newActiveTabBtn2Height + 10 + 'px';
+  } else {
+    // **螢幕寬度 >= 992px，確保所有按鈕都顯示**
+    showAllTabBtns2();
+  }
 }
 
 // 隱藏所有非 active 的 tabBtns2

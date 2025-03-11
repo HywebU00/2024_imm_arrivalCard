@@ -3940,6 +3940,12 @@ table.tableSprite tr:nth-child(even) {
   .travelerInfo {
     flex-wrap: wrap;
   }
+  .travelerInfo::before {
+    content: "";
+    display: block;
+    height: 10px;
+    width: 100%;
+  }
 }
 .travelerInfo > .tabItems2 {
   flex: 0 0 300px;
