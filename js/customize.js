@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function checkScroll() {
-    if (window.innerWidth >= 992) {
+    if (window.innerWidth >= 768) {
       if (window.scrollY >= 50) {
         if (!header.classList.contains('fixed')) {
           header.classList.add('fixed');
